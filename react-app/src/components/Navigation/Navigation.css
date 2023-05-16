@@ -8,23 +8,24 @@
 
 .navbar {
   display: flex;
-  justify-content: space-around;
-  width: 50%;
+  justify-content: center;
   margin: auto;
   list-style: none;
+  background-color: #282828;
 }
 
 .title {
-  font-size: 2rem;
-  color: rgb(245, 41, 54);
+  font-weight: bold;
 }
 
+.title,
+.current,
+.fa-book,
+.fa-home {
+  font-size: 2rem;
+}
+
+.title,
 .current {
-  font-size: 2rem;
   color: rgb(245, 41, 54);
-}
-
-.fa-home,
-.fa-book {
-  font-size: 2rem;
 }

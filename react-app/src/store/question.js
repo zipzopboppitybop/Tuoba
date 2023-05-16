@@ -1,5 +1,6 @@
-const GET_QUESTIONS = "question/GET_QUESTIONS";
-const CREATE_QUESTION = "question/CREATE_QUESTION";
+const GET_QUESTIONS = 'question/GET_QUESTIONS';
+const CREATE_QUESTION = 'question/CREATE_QUESTION';
+const DELETE_QUESTION = 'question/DELETE_QUESTION'
 
 const getQuestions = (questions) => {
     return {
@@ -12,6 +13,13 @@ const createQuestion = (question) => {
     return {
         type: CREATE_QUESTION,
         question
+    }
+}
+
+const deleteQuestion = (questionId) => {
+    return {
+        type: DELETE_QUESTION,
+        questionId
     }
 }
 
@@ -42,6 +50,16 @@ export const createOneQuestion = (question) => async (dispatch) => {
     }
 }
 
+export const deleteOneQuestion = (questionId) => async (dispatch) => {
+    const response = await fetch(`/api/questions/delete/${questionId}`, {
+        method: 'DELETE'
+    })
+
+    if (response.ok) {
+        dispatch(deleteQuestion(questionId))
+    }
+}
+
 export default function questionsReducer(state = {}, action) {
     let newState;
     switch (action.type) {
@@ -53,6 +71,10 @@ export default function questionsReducer(state = {}, action) {
             newState = { ...state };
             newState[action.question.id] = action.question;
             return newState;
+        case DELETE_QUESTION:
+            newState = { ...state }
+            delete newState[action.questionId]
+            return newState
         default:
             return state;
     }

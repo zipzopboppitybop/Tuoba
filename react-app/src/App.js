@@ -23,9 +23,9 @@ function App() {
           <Route exact path="/" >
             <Feed />
           </Route>
-          <Route exact path="/create" >
+          {/* <Route exact path="/create" >
             <CreateQuestion />
-          </Route>
+          </Route> */}
           <Route exact path="/login" >
             <LoginFormPage />
           </Route>

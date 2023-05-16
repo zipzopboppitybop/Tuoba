@@ -4,6 +4,6 @@
 
 .question-item {
     margin: auto;
-    width: 50%;
-    height: 5rem;
+    width: 30rem;
+    min-height: 3rem;
 }

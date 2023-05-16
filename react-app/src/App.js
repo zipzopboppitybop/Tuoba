@@ -6,6 +6,7 @@ import LoginFormPage from "./components/LoginFormPage";
 import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
 import Feed from "./components/Questions/Feed";
+import CreateQuestion from "./components/Questions/CreateQuestion";
 
 function App() {
   const dispatch = useDispatch();
@@ -21,6 +22,9 @@ function App() {
         <Switch>
           <Route exact path="/" >
             <Feed />
+          </Route>
+          <Route exact path="/create" >
+            <CreateQuestion />
           </Route>
           <Route exact path="/login" >
             <LoginFormPage />

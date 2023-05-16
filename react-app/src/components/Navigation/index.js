@@ -3,11 +3,12 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
+import CreateQuestion from '../Questions/CreateQuestion';
+import OpenModalButton from '../OpenModalButton';
 
 function Navigation({ isLoaded }) {
 	const sessionUser = useSelector(state => state.session.user);
 	const url = window.location.pathname
-	console.log(url)
 	return (
 		<ul className='navbar'>
 			<li className='title'>
@@ -39,7 +40,7 @@ function Navigation({ isLoaded }) {
 			)}
 			{sessionUser ? (
 				<li>
-					<button>hello</button>
+					<OpenModalButton buttonText={<><i className="fa fa-pen-square"></i></>} modalComponent={<CreateQuestion />}></OpenModalButton>
 				</li>
 
 			) : (<></>)}

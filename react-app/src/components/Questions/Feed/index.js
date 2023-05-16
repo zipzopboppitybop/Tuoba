@@ -12,15 +12,21 @@ const Feed = () => {
 
     useEffect(() => {
         dispatch(getAllQuestions())
-    }, [dispatch])
+    }, [dispatch,])
 
     return (
         <div className='feed'>
-            {Object.values(questions).map(question => (
-                <li key={question.id} className='question-item'>
+            {Object?.values(questions)?.sort((a, b) => new Date(b?.createdAt) - new Date(a?.createdAt))?.map(question =>
+
+            (
+
+                <li key={question?.id} className="question-item">
                     <QuestionItem question={question} />
                 </li>
-            ))}
+            )
+
+            )
+            }
         </div>
     )
 }

@@ -12,4 +12,8 @@ def questions():
     Query for all questions and returns them in a list of questions dictionaries
     """
     questions = Question.query.all()
-    return {'questions': [question.to_dict() for question in questions]}
+    return_list = []
+    for question in questions:
+        question_dict = question.to_dict()
+        return_list.append(question_dict)
+    return return_list

@@ -22,5 +22,6 @@ class Question(db.Model):
             'content': self.content,
             'userId': self.userId,
             'createdAt': self.createdAt,
-            'updatedAt': self.updatedAt
+            'updatedAt': self.updatedAt,
+            'owner': self.owner.to_dict()
         }

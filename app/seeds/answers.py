@@ -15,7 +15,7 @@ def seed_answers():
     )
     answer3 = Answer(
         content="Lower pitch sounds have longer wavelengths. Musical instruments are designed to resonate with the pitches they produce, meaning that music from an instrument has wavelengths that match the length of the instrument. This is why larger instruments have lower sounds.",
-        userId=1,
+        userId=2,
         questionId=3
     )
 

@@ -1,31 +1,28 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createOneQuestion, getAllQuestions } from "../../../store/question";
+import { updateOneQuestion, getAllQuestions } from "../../../store/question";
 import { useModal } from "../../../context/Modal";
 import { useHistory } from "react-router-dom";
 
 
-const CreateQuestion = () => {
+const UpdateQuestion = ({ question }) => {
     const { closeModal } = useModal()
     const dispatch = useDispatch();
     const currentUser = useSelector(state => state?.session?.user);
-    const [content, setContent] = useState('');
+    const [content, setContent] = useState(question?.content)
     const [errors, setErrors] = useState([]);
 
     const onSubmit = async (e) => {
-        const newQuestion = {
+        const updateQuestion = {
             content: content
         }
-        const successQuestion = await dispatch(createOneQuestion(newQuestion))
-        if (successQuestion) {
-            setErrors(successQuestion);
-        } else {
+        const updatedQuestion = await dispatch(updateOneQuestion(updateQuestion, question?.id))
+        if (updatedQuestion) {
             closeModal();
             dispatch(getAllQuestions())
         }
 
     }
-
     const handleCancel = (e) => {
         e.preventDefault();
         closeModal();
@@ -34,16 +31,15 @@ const CreateQuestion = () => {
     return (
         <div>
             <form>
-                <ul>
+                {/* <ul>
                     {errors.map((error, idx) => (
                         <li key={idx}>{error}</li>
                     ))}
-                </ul>
+                </ul> */}
                 <textarea
-                    // className="create-post-textarea"
                     rows="8"
                     cols="60"
-                    placeholder="Go ahead, put anything."
+                    placeholder={question?.content}
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
                 />
@@ -56,4 +52,4 @@ const CreateQuestion = () => {
     )
 }
 
-export default CreateQuestion
+export default UpdateQuestion

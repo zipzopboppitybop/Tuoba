@@ -1,6 +1,7 @@
 const GET_QUESTIONS = 'question/GET_QUESTIONS';
 const CREATE_QUESTION = 'question/CREATE_QUESTION';
-const DELETE_QUESTION = 'question/DELETE_QUESTION'
+const UPDATE_QUESTION = 'question/UPDATE_QUESTION';
+const DELETE_QUESTION = 'question/DELETE_QUESTION';
 
 const getQuestions = (questions) => {
     return {
@@ -12,6 +13,13 @@ const getQuestions = (questions) => {
 const createQuestion = (question) => {
     return {
         type: CREATE_QUESTION,
+        question
+    }
+}
+
+const updateQuestion = (question) => {
+    return {
+        type: UPDATE_QUESTION,
         question
     }
 }
@@ -50,6 +58,20 @@ export const createOneQuestion = (question) => async (dispatch) => {
     }
 }
 
+export const updateOneQuestion = (question, questionId) => async (dispatch) => {
+    const response = await fetch(`/api/questions/edit/${questionId}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(question)
+    })
+
+    if (response.ok) {
+        const res = await response.json()
+        dispatch(updateQuestion(res))
+        return res
+    }
+}
+
 export const deleteOneQuestion = (questionId) => async (dispatch) => {
     const response = await fetch(`/api/questions/delete/${questionId}`, {
         method: 'DELETE'
@@ -71,6 +93,10 @@ export default function questionsReducer(state = {}, action) {
             newState = { ...state };
             newState[action.question.id] = action.question;
             return newState;
+        case UPDATE_QUESTION:
+            newState = { ...state }
+            newState[action.question.id] = action.question
+            return newState
         case DELETE_QUESTION:
             newState = { ...state }
             delete newState[action.questionId]

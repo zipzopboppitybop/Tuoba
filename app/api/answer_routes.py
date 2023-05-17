@@ -7,6 +7,36 @@ from datetime import date
 
 answer_routes = Blueprint('answers', __name__)
 
+
+@answer_routes.route('/edit/<id>', methods=['PUT'])
+@login_required
+def edit_a_question(id):
+    """
+    Query for editing an existing answer the current user has created
+    """
+    form = AnswerForm()
+    current_user_dict = current_user.to_dict()
+    form['csrf_token'].data = request.cookies['csrf_token']
+
+    if form.validate_on_submit():
+        answer_to_edit = Answer.query.get(id)
+
+        if not answer_to_edit:
+            return {'Message': 'Answer does not exist'}
+
+        answer_to_edit_dict = answer_to_edit.to_dict()
+
+        if answer_to_edit_dict['userId'] == current_user_dict['id']:
+            answer_to_edit.content = form.data['content']
+            answer_to_edit.updatedAt = date.today()
+            db.session.commit()
+            returning_value = answer_to_edit.to_dict()
+            return returning_value
+        return {'Message': 'Unauthorized'}
+    return {'errors': validation_errors_to_error_messages(form.errors)},401
+
+
+
 @answer_routes.route('/delete/<id>', methods=['DELETE'])
 @login_required
 def delete_an_answer(id):

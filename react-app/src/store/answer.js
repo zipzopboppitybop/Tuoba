@@ -1,11 +1,19 @@
 const GET_ANSWERS = 'answer/GET_ANSWERS';
 const CREATE_ANSWER = 'answer/CREATE_ANSWER';
+const UPDATE_ANSWER = 'answer/UPDATE_ANSWER'
 const DELETE_ANSWER = 'answer/DELETE_ANSWER';
 
 const getAnswers = (answers) => {
     return {
         type: GET_ANSWERS,
         answers
+    }
+}
+
+const updateAnswer = (answer) => {
+    return {
+        type: UPDATE_ANSWER,
+        answer
     }
 }
 
@@ -50,6 +58,20 @@ export const createOneAnswer = (answer, questionId) => async (dispatch) => {
     }
 }
 
+export const updateOneAnswer = (answer, answerId) => async (dispatch) => {
+    const response = await fetch(`/api/answers/edit/${answerId}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(answer)
+    })
+
+    if (response.ok) {
+        const res = await response.json()
+        dispatch(updateAnswer(res))
+        return res
+    }
+}
+
 export const deleteOneAnswer = (answerId) => async (dispatch) => {
     const response = await fetch(`/api/answers/delete/${answerId}`, {
         method: 'DELETE'
@@ -72,6 +94,10 @@ export default function answersReducer(state = {}, action) {
             newState = { ...state };
             newState[action.answer.id] = action.answer;
             return newState;
+        case UPDATE_ANSWER:
+            newState = { ...state }
+            newState[action.answer.id] = action.answer
+            return newState
         case DELETE_ANSWER:
             newState = { ...state }
             delete newState[action.answerId]

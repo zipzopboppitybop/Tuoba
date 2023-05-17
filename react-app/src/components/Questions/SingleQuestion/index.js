@@ -9,6 +9,7 @@ import { getAllAnswers } from "../../../store/answer";
 import './SingleQuestion.css'
 import CreateAnswer from "../../Answers/CreateAnswer";
 import DeleteAnswer from "../../Answers/DeleteAnswer";
+import UpdateAnswer from "../../Answers/UpdateAnswer";
 
 const SingleQuesiton = () => {
     const dispatch = useDispatch();
@@ -57,6 +58,10 @@ const SingleQuesiton = () => {
                                 <OpenModalButton
                                     buttonText={<><i className="fas fa-trash-alt"></i></>}
                                     modalComponent={<DeleteAnswer answerId={answer?.id} />}
+                                />
+                                <OpenModalButton
+                                    buttonText={<><i className="fa fa-pencil"></i></>}
+                                    modalComponent={<UpdateAnswer answer={answer} />}
                                 />
                             </div>
                         ) : (

@@ -113,7 +113,6 @@ def edit_a_question(id):
 
         if question_to_edit_dict['userId'] == current_user_dict['id']:
             question_to_edit.content = form.data['content']
-            question_to_edit.userId = current_user_dict['id']
             question_to_edit.updatedAt = date.today()
             db.session.commit()
             returning_value = question_to_edit.to_dict()

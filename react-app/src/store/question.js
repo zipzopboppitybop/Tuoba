@@ -1,4 +1,5 @@
 const GET_QUESTIONS = 'question/GET_QUESTIONS';
+const GET_QUESTION = 'question/GET_QUESTION';
 const CREATE_QUESTION = 'question/CREATE_QUESTION';
 const UPDATE_QUESTION = 'question/UPDATE_QUESTION';
 const DELETE_QUESTION = 'question/DELETE_QUESTION';
@@ -7,6 +8,13 @@ const getQuestions = (questions) => {
     return {
         type: GET_QUESTIONS,
         questions
+    }
+}
+
+const getQuestion = (question) => {
+    return {
+        type: GET_QUESTION,
+        question
     }
 }
 
@@ -36,6 +44,14 @@ export const getAllQuestions = () => async (dispatch) => {
     if (response.ok) {
         const questions = await response.json()
         dispatch(getQuestions(questions))
+    }
+}
+
+export const getOneQuestion = (id) => async (dispatch) => {
+    const response = await fetch(`/api/questions/${id}`)
+    if (response.ok) {
+        const question = await response.json()
+        dispatch(getQuestion(question))
     }
 }
 
@@ -88,6 +104,10 @@ export default function questionsReducer(state = {}, action) {
         case GET_QUESTIONS:
             newState = {}
             action.questions.forEach((question) => newState[question.id] = question)
+            return newState
+        case GET_QUESTION:
+            newState = {}
+            newState.singleQuestion = action.question
             return newState
         case CREATE_QUESTION:
             newState = { ...state };

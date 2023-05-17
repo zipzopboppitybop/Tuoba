@@ -6,7 +6,8 @@ import LoginFormPage from "./components/LoginFormPage";
 import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
 import Feed from "./components/Questions/Feed";
-import CreateQuestion from "./components/Questions/CreateQuestion";
+import SingleQuesiton from "./components/Questions/SingleQuestion";
+
 
 function App() {
   const dispatch = useDispatch();
@@ -23,9 +24,9 @@ function App() {
           <Route exact path="/" >
             <Feed />
           </Route>
-          {/* <Route exact path="/create" >
-            <CreateQuestion />
-          </Route> */}
+          <Route exact path="/questions/:id" >
+            <SingleQuesiton />
+          </Route>
           <Route exact path="/login" >
             <LoginFormPage />
           </Route>

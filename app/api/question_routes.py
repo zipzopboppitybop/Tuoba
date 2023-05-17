@@ -21,6 +21,15 @@ def questions():
         return_list.append(question_dict)
     return return_list
 
+@question_routes.route('/<id>')
+# @login_required
+def question(id):
+    """
+    Query for one question and returns it in a question dictionary
+    """
+    question = Question.query.get(id)
+    return question.to_dict()
+
 
 
 @question_routes.route('/create', methods=['POST'])

@@ -3,6 +3,9 @@ import { useSelector, useDispatch } from "react-redux"
 import DeleteQuestion from "../DeleteQuestion"
 import OpenModalButton from "../../OpenModalButton"
 import UpdateQuestion from "../UpdateQuestion";
+import { NavLink } from "react-router-dom";
+import './QuestionItem.css'
+import SingleQuesiton from "../SingleQuestion";
 
 const QuestionItem = ({ question }) => {
     const currentUser = useSelector(state => state?.session?.user)
@@ -10,7 +13,10 @@ const QuestionItem = ({ question }) => {
     return (
         <div>
             {question?.owner?.username}
-            {question?.content}
+            <NavLink question={question} className='question-link' to={`/questions/${question.id}`}>
+                {question?.content}
+            </NavLink>
+
             {currentUser?.id === question?.userId ? (
                 <div>
                     <OpenModalButton

@@ -8,7 +8,7 @@ def seed_questions():
         userId=1
     )
     question2 = Question(
-        content="How do you tune a trumpet?",
+        content="How much does a tuba weigh?",
         userId=2
     )
     question3 = Question(

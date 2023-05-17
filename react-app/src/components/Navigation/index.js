@@ -14,25 +14,12 @@ function Navigation({ isLoaded }) {
 			<li className='title'>
 				Tuoba
 			</li>
-			{url === "/" ? (
-				<li>
-					<NavLink className='fa current  fa-home' exact to="/"></NavLink>
-				</li>
-			) : (
-				<li>
-					<NavLink className='fa  fa-home' exact to="/"></NavLink>
-				</li>
-			)}
-			{url === "/following" ? (
-				<li>
-					<NavLink className='fa current  fas fa-book' exact to="/following"></NavLink>
-				</li>
-			) : (
-				<li>
-					<NavLink className='fa  fas fa-book' exact to="/following"></NavLink>
-				</li>
-			)}
-
+			<li>
+				<NavLink className='fa  fa-home' exact to="/"></NavLink>
+			</li>
+			<li>
+				<NavLink className='fa  fas fa-book' exact to="/following"></NavLink>
+			</li>
 			{isLoaded && (
 				<li>
 					<ProfileButton user={sessionUser} />

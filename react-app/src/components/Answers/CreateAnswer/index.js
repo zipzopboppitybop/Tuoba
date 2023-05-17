@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createOneQuestion, getAllQuestions } from "../../../store/question";
+import { createOneAnswer } from "../../../store/answer";
+import { getOneQuestion } from "../../../store/question";
 import { useModal } from "../../../context/Modal";
 import { useHistory } from "react-router-dom";
 
 
-const CreateQuestion = () => {
+const CreateAnswer = ({ questionId }) => {
     const { closeModal } = useModal()
     const dispatch = useDispatch();
     const currentUser = useSelector(state => state?.session?.user);
@@ -14,15 +15,15 @@ const CreateQuestion = () => {
 
     const onSubmit = async (e) => {
         e.preventDefault()
-        const newQuestion = {
+        const newAnswer = {
             content: content
         }
-        const successQuestion = await dispatch(createOneQuestion(newQuestion))
-        if (successQuestion) {
-            setErrors(successQuestion);
+        const successAnswer = await dispatch(createOneAnswer(newAnswer, questionId))
+        if (successAnswer) {
+            setErrors(successAnswer);
         } else {
             closeModal();
-            dispatch(getAllQuestions())
+            dispatch(getOneQuestion(questionId))
         }
 
     }
@@ -44,7 +45,7 @@ const CreateQuestion = () => {
                     // className="create-post-textarea"
                     rows="8"
                     cols="60"
-                    placeholder="Go ahead, put anything."
+                    placeholder="Write an answer."
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
                 />
@@ -57,4 +58,4 @@ const CreateQuestion = () => {
     )
 }
 
-export default CreateQuestion
+export default CreateAnswer

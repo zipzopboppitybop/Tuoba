@@ -5,17 +5,21 @@ import OpenModalButton from "../../OpenModalButton"
 import UpdateQuestion from "../UpdateQuestion";
 import { useParams } from "react-router-dom";
 import { getOneQuestion } from "../../../store/question";
+import { getAllAnswers } from "../../../store/answer";
 import './SingleQuestion.css'
+import CreateAnswer from "../../Answers/CreateAnswer";
+import DeleteAnswer from "../../Answers/DeleteAnswer";
 
 const SingleQuesiton = () => {
     const dispatch = useDispatch();
     const { id } = useParams();
     const currentUser = useSelector(state => state?.session?.user);
     const question = useSelector(state => state.questions?.singleQuestion);
-    const answers = useSelector(state => state.questions?.singleQuestion?.answers)
+    const answers = useSelector(state => state.answers)
 
     useEffect(() => {
         dispatch(getOneQuestion(id))
+        dispatch(getAllAnswers(id))
     }, [dispatch])
 
     return (
@@ -40,18 +44,29 @@ const SingleQuesiton = () => {
                     <></>
                 )}
             </div>
+            <OpenModalButton buttonText={<><i className="fa fa-pen-square"></i></>} modalComponent={<CreateAnswer questionId={question?.id} />}></OpenModalButton>
 
+            <ul>
+                {Object?.values(answers).sort((a, b) => new Date(b?.createdAt) - new Date(a?.createdAt))?.map(answer =>
+                (
+                    <li key={answer?.id} className="answer-item">
 
-
-            {answers?.sort((a, b) => new Date(b?.createdAt) - new Date(a?.createdAt))?.map(answer =>
-            (
-                <li key={answer?.id} className="answer-item">
-
-                    {answer.content}
-                </li>
-            )
-            )
-            }
+                        {answer.content}
+                        {currentUser?.id === answer?.userId ? (
+                            <div>
+                                <OpenModalButton
+                                    buttonText={<><i className="fas fa-trash-alt"></i></>}
+                                    modalComponent={<DeleteAnswer answerId={answer?.id} />}
+                                />
+                            </div>
+                        ) : (
+                            <></>
+                        )}
+                    </li>
+                )
+                )
+                }
+            </ul>
 
         </div>
     )

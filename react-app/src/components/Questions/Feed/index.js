@@ -16,14 +16,16 @@ const Feed = () => {
 
     return (
         <div className='feed'>
-            {Object?.values(questions)?.sort((a, b) => new Date(b?.createdAt) - new Date(a?.createdAt))?.map(question =>
-            (
-                <li key={question?.id} className="question-item">
-                    <QuestionItem question={question} />
-                </li>
-            )
-            )
-            }
+            <ul>
+                {Object?.values(questions)?.sort((a, b) => new Date(b?.createdAt) - new Date(a?.createdAt))?.map(question =>
+                (
+                    <li key={question?.id} className="question-item">
+                        <QuestionItem question={question} />
+                    </li>
+                )
+                )
+                }
+            </ul>
         </div>
     )
 }

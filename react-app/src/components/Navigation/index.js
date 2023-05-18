@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
@@ -12,13 +12,15 @@ function Navigation({ isLoaded }) {
 	return (
 		<ul className='navbar'>
 			<li className='title'>
-				Tuoba
+				<Link className='logo' title='Home' exact to="/">
+					Tuoba
+				</Link>
 			</li>
 			<li>
-				<NavLink className='fa  fa-home' exact to="/"></NavLink>
+				<NavLink title='Home' className='fa  fa-home' exact to="/"></NavLink>
 			</li>
 			<li>
-				<NavLink className='fa  fas fa-book' exact to="/following"></NavLink>
+				<NavLink title='Following' className='fa  fas fa-book' exact to="/following"></NavLink>
 			</li>
 			{isLoaded && (
 				<li>

@@ -7,6 +7,7 @@ import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
 import Feed from "./components/Questions/Feed";
 import SingleQuesiton from "./components/Questions/SingleQuestion";
+import FollowingPage from "./components/Following";
 
 
 function App() {
@@ -26,6 +27,9 @@ function App() {
           </Route>
           <Route exact path="/questions/:id" >
             <SingleQuesiton />
+          </Route>
+          <Route exact path="/following" >
+            <FollowingPage />
           </Route>
           <Route exact path="/login" >
             <LoginFormPage />

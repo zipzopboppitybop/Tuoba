@@ -12,17 +12,25 @@
   margin: auto;
   list-style: none;
   background-color: #282828;
+
 }
 
 .title {
   font-weight: bold;
+  text-decoration: none;
 }
 
 .title,
 .current,
 .fa-book,
-.fa-home {
+.fa-home,
+.logo {
   font-size: 2rem;
+  text-decoration: none;
+}
+
+.logo {
+  color: rgb(245, 41, 54);
 }
 
 .title,

@@ -19,6 +19,7 @@ class Answer(db.Model):
     answer_owner = db.relationship('User', back_populates='answers')
     answer_question = db.relationship('Question', back_populates='answers')
 
+
     def to_dict(self):
         return {
             'id': self.id,

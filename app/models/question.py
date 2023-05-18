@@ -15,7 +15,7 @@ class Question(db.Model):
     updatedAt = db.Column(db.DateTime, default=db.func.now())
 
     owner = db.relationship('User', back_populates='questions')
-    answers = db.relationship('Answer', back_populates='answer_question')
+    answers = db.relationship('Answer', back_populates='answer_question', cascade='all, delete-orphan')
 
     def to_dict(self):
         return {

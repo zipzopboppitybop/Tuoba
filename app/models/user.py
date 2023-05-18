@@ -25,8 +25,8 @@ class User(db.Model, UserMixin):
         lazy="dynamic"
     )
 
-    questions = db.relationship('Question', back_populates='owner')
-    answers = db.relationship('Answer', back_populates='answer_owner')
+    questions = db.relationship('Question', back_populates='owner', cascade='all, delete-orphan')
+    answers = db.relationship('Answer', back_populates='answer_owner', cascade='all, delete-orphan')
 
     @property
     def password(self):

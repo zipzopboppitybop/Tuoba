@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux"
 import DeleteQuestion from "../DeleteQuestion"
 import OpenModalButton from "../../OpenModalButton"
@@ -18,7 +18,6 @@ const QuestionItem = ({ question }) => {
 
         dispatch(getFollowsForUser(question?.userId))
         dispatch(getAllQuestions())
-
     }
 
 

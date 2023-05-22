@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux"
 import DeleteQuestion from "../DeleteQuestion"
 import OpenModalButton from "../../OpenModalButton"
@@ -10,6 +10,8 @@ import './SingleQuestion.css'
 import CreateAnswer from "../../Answers/CreateAnswer";
 import DeleteAnswer from "../../Answers/DeleteAnswer";
 import UpdateAnswer from "../../Answers/UpdateAnswer";
+import AnswerItem from "../../Answers/AnswerItem";
+
 
 const SingleQuesiton = () => {
     const dispatch = useDispatch();
@@ -22,6 +24,8 @@ const SingleQuesiton = () => {
         dispatch(getOneQuestion(id))
         dispatch(getAllAnswers(id))
     }, [dispatch])
+
+
 
     return (
         <div >
@@ -51,22 +55,7 @@ const SingleQuesiton = () => {
                 {Object?.values(answers).sort((a, b) => new Date(b?.createdAt) - new Date(a?.createdAt))?.map(answer =>
                 (
                     <li key={answer?.id} className="answer-item">
-
-                        {answer.content}
-                        {currentUser?.id === answer?.userId ? (
-                            <div>
-                                <OpenModalButton
-                                    buttonText={<><i className="fas fa-trash-alt"></i></>}
-                                    modalComponent={<DeleteAnswer answerId={answer?.id} />}
-                                />
-                                <OpenModalButton
-                                    buttonText={<><i className="fa fa-pencil"></i></>}
-                                    modalComponent={<UpdateAnswer answer={answer} />}
-                                />
-                            </div>
-                        ) : (
-                            <></>
-                        )}
+                        <AnswerItem answer={answer} />
                     </li>
                 )
                 )

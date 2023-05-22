@@ -1,6 +1,6 @@
-from flask import Blueprint, jsonify, session, request
+from flask import Blueprint, request
 from flask_login import login_required, current_user
-from app.models import User, Question, db, Answer
+from app.models import Question, db, Answer
 from .auth_routes import validation_errors_to_error_messages
 from app.forms import QuestionForm, AnswerForm
 from datetime import date

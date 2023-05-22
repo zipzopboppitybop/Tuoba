@@ -2,6 +2,8 @@ from .db import db, environment, SCHEMA, add_prefix_for_prod
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 from .follow import follows
+from .like import likes
+
 
 
 class User(db.Model, UserMixin):
@@ -25,9 +27,15 @@ class User(db.Model, UserMixin):
         lazy="dynamic"
     )
 
+    #likes relationship
+    answer_likes = db.relationship(
+        "Answer",
+        secondary=likes,
+        back_populates="user_likes"
+    )
+
     questions = db.relationship('Question', back_populates='owner', cascade='all, delete-orphan')
     answers = db.relationship('Answer', back_populates='answer_owner', cascade='all, delete-orphan')
-    votes = db.relationship('Vote', back_populates='user', cascade='all, delete-orphan')
 
     @property
     def password(self):
@@ -46,5 +54,6 @@ class User(db.Model, UserMixin):
             'username': self.username,
             'email': self.email,
             'following': [user.id for user in self.following],
-            'followers': [user.id for user in self.followers]
+            'followers': [user.id for user in self.followers],
+            'likes': [answer.id for answer in self.answer_likes],
         }

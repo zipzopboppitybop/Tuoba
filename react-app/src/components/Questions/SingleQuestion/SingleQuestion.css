@@ -1,10 +1,24 @@
 .question {
     margin: auto;
-    width: 50%;
+    width: 40rem;
+    min-height: 3rem;
+    margin-bottom: .5rem;
+    background-color: #282828;
+    padding: .7rem;
     color: white;
+    margin-top: 1rem;
 }
 
 .question-content {
     font-weight: bold;
-    font-size: 1.3rem;
+    font-size: 2rem;
+}
+
+.answer-item {
+    width: 100%;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
 }

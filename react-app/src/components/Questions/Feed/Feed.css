@@ -1,10 +1,43 @@
 .feed {
-    list-style: none;
     color: white;
+}
+
+.question-list {
+    list-style: none;
+}
+
+.question-answer {
+    margin-top: .5rem;
+}
+
+.question-link {
+    font-size: 1.4rem;
 }
 
 .question-item {
     margin: auto;
-    width: 30rem;
+    width: 40rem;
     min-height: 3rem;
+    margin-bottom: .5rem;
+    background-color: #282828;
+    padding: .7rem;
+}
+
+.button-follow,
+.button-unfollow {
+    background-color: #282828;
+    border: 0px;
+}
+
+.button-follow:hover,
+.button-unfollow:hover {
+    text-decoration: underline;
+}
+
+.button-follow {
+    color: #4894fd;
+}
+
+.button-unfollow {
+    color: #8e9092;
 }

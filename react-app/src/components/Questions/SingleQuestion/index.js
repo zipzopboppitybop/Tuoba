@@ -8,8 +8,6 @@ import { getOneQuestion } from "../../../store/question";
 import { getAllAnswers } from "../../../store/answer";
 import './SingleQuestion.css'
 import CreateAnswer from "../../Answers/CreateAnswer";
-import DeleteAnswer from "../../Answers/DeleteAnswer";
-import UpdateAnswer from "../../Answers/UpdateAnswer";
 import AnswerItem from "../../Answers/AnswerItem";
 
 
@@ -19,6 +17,7 @@ const SingleQuesiton = () => {
     const currentUser = useSelector(state => state?.session?.user);
     const question = useSelector(state => state.questions?.singleQuestion);
     const answers = useSelector(state => state.answers)
+
 
     useEffect(() => {
         dispatch(getOneQuestion(id))
@@ -30,7 +29,6 @@ const SingleQuesiton = () => {
     return (
         <div >
             <div className="question">
-                {question?.owner?.username}
                 <span className="question-content">{question?.content}
                 </span>
                 {currentUser?.id === question?.userId ? (

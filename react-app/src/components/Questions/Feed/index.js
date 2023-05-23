@@ -16,7 +16,7 @@ const Feed = () => {
 
     return (
         <div className='feed'>
-            <ul>
+            <ul className='question-list'>
                 {Object?.values(questions)?.sort((a, b) => new Date(b?.createdAt) - new Date(a?.createdAt))?.map(question =>
                 (
                     <li key={question?.id} className="question-item">

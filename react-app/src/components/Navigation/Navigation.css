@@ -1,9 +1,14 @@
 .profile-dropdown {
   position: absolute;
+  background-color: white;
 }
 
 .hidden {
   display: none;
+}
+
+.navbar-container {
+  background-color: #282828;
 }
 
 .navbar {
@@ -11,7 +16,7 @@
   justify-content: center;
   margin: auto;
   list-style: none;
-  background-color: #282828;
+  width: 50%;
 
 }
 

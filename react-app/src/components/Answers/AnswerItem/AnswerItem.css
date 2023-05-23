@@ -1,0 +1,19 @@
+.answer-container {
+    margin: auto;
+    width: 40rem;
+    min-height: 3rem;
+    margin-bottom: .5rem;
+    background-color: #282828;
+    padding: .7rem;
+}
+
+.username-initials {
+    display: flex;
+    align-items: center;
+    margin-bottom: .3rem;
+}
+
+.username-answer {
+    margin-left: 1.5rem;
+    color: white;
+}

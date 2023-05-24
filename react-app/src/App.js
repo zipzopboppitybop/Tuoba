@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import Feed from "./components/Questions/Feed";
 import SingleQuesiton from "./components/Questions/SingleQuestion";
 import FollowingPage from "./components/Following";
+import Footer from "./components/Navigation/Footer";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
   return (
     <>
       <Navigation isLoaded={isLoaded} />
+      <Footer />
       {isLoaded && (
         <Switch>
           <Route exact path="/" >

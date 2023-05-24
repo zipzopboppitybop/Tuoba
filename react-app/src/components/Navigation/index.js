@@ -8,7 +8,7 @@ import OpenModalButton from '../OpenModalButton';
 
 function Navigation({ isLoaded }) {
 	const sessionUser = useSelector(state => state.session.user);
-	const url = window.location.pathname
+
 	return (
 		<div className='navbar-container'>
 			<ul className='navbar'>
@@ -35,7 +35,6 @@ function Navigation({ isLoaded }) {
 
 				) : (<></>)}
 			</ul>
-
 		</div>
 
 	);

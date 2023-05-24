@@ -47,7 +47,12 @@ const SingleQuesiton = () => {
                     <></>
                 )}
             </div>
-            <OpenModalButton buttonText={<><i className="fa fa-pen-square"></i></>} modalComponent={<CreateAnswer questionId={question?.id} />}></OpenModalButton>
+            {currentUser?.id ? (
+                <OpenModalButton buttonText={<><i className="fa fa-pen-square"></i></>} modalComponent={<CreateAnswer questionId={question?.id} />}></OpenModalButton>
+            ) : (
+                <></>
+            )}
+
 
             <ul>
                 {Object?.values(answers).sort((a, b) => new Date(b?.createdAt) - new Date(a?.createdAt))?.map(answer =>

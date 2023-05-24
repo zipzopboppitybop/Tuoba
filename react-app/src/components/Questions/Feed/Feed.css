@@ -1,5 +1,10 @@
+:root {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 .feed {
     color: white;
+
 }
 
 .question-list {
@@ -21,6 +26,7 @@
     margin-bottom: .5rem;
     background-color: #282828;
     padding: .7rem;
+    margin-top: 1rem;
 }
 
 .button-follow,

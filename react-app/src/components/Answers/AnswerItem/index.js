@@ -32,7 +32,10 @@ const AnswerItem = ({ answer }) => {
 
             </div>
 
-            {answer?.content}
+            <div className="answer-content">
+                {answer?.content}
+            </div>
+
             <div>
                 {currentUser && !answer?.likes?.find(id => id === currentUser?.id) && (currentUser?.id !== answer?.userId) ? <button className="like-button" onClick={onSubmitLike}><i className="far fa-heart"></i></button> : currentUser && answer?.likes?.find(id => id === currentUser?.id) && (currentUser?.id !== answer?.userId) ? <button className="unlike-button" onClick={onSubmitLike}><i className="fas fa-heart" ></i></button> : <></>}
             </div>

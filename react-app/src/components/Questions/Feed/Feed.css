@@ -27,6 +27,7 @@
     background-color: #282828;
     padding: .7rem;
     margin-top: 1rem;
+    border-radius: 1.5rem;
 }
 
 .button-follow,
@@ -46,4 +47,86 @@
 
 .button-unfollow {
     color: #8e9092;
+}
+
+.splash {
+    background-image: url("./images/bandroom.jpg");
+    max-width: 100vw;
+    height: 98vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.login-title {
+    color: rgb(245, 41, 54);
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.login-container {
+    width: 50rem;
+    height: 45rem;
+    margin: 0 auto;
+    margin-top: 9%;
+    text-align: center;
+    color: white;
+    background-color: #282828;
+    padding: .5rem;
+}
+
+.modals {
+    display: flex;
+
+}
+
+.signup,
+.login {
+    display: flex;
+    flex-direction: column;
+    width: 25rem;
+    height: 10rem;
+}
+
+.form-login {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.inputField {
+    margin: 0 auto;
+    width: 20rem;
+    height: 2rem;
+    border: #393839;
+    background-color: #393839;
+    padding: .3rem;
+    color: white;
+}
+
+.form-label {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: #939598;
+}
+
+.login-button,
+.demo-login {
+    margin: 0 auto;
+    margin-top: 1rem;
+    width: 5rem;
+    height: 2rem;
+    border-radius: 1rem;
+    color: white;
+    background-color: #4894fd;
+}
+
+.login-button:active,
+.demo-login:active {
+    transform: translateY(.3rem);
+}
+
+.demo-login {
+    margin-top: 4rem;
 }

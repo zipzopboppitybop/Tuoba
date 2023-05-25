@@ -5,6 +5,13 @@
     margin-bottom: .5rem;
     background-color: #282828;
     padding: .7rem;
+    border-radius: 1.5rem;
+
+}
+
+.answer-content {
+    word-wrap: break-word;
+    word-break: break-word;
 }
 
 .username-initials {

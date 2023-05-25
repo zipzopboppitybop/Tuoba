@@ -8,14 +8,15 @@
 
 .circle {
     border-radius: 50%;
-    width: 11px;
-    height: 11px;
-    padding: 12px;
-    background: white;
+    width: 12px;
+    height: 13px;
+    padding: 15px;
+    background: #6a4644;
     border: 3px solid #000;
-    color: black;
+    color: white;
     text-align: center;
     font: 16px Arial, sans-serif;
+    font-weight: bold;
 }
 
 .username-unfollow-follow {

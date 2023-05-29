@@ -1,14 +1,14 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { createOneQuestion, getAllQuestions } from "../../../store/question";
 import { useModal } from "../../../context/Modal";
 import { useHistory } from "react-router-dom";
 
 
 const CreateQuestion = () => {
+    const history = useHistory();
     const { closeModal } = useModal()
     const dispatch = useDispatch();
-    const currentUser = useSelector(state => state?.session?.user);
     const [content, setContent] = useState('');
     const [errors, setErrors] = useState([]);
 
@@ -22,6 +22,7 @@ const CreateQuestion = () => {
             setErrors(successQuestion);
         } else {
             closeModal();
+            history.push("/")
             dispatch(getAllQuestions())
         }
 
@@ -41,7 +42,6 @@ const CreateQuestion = () => {
                     ))}
                 </ul>
                 <textarea
-                    // className="create-post-textarea"
                     rows="8"
                     cols="60"
                     placeholder="Go ahead, put anything."

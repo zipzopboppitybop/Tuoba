@@ -1,8 +1,6 @@
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { deleteOneQuestion } from "../../../store/question";
-import { useSelector } from "react-redux";
-import { useState } from "react";
 import { useModal } from "../../../context/Modal";
 
 
@@ -14,6 +12,7 @@ const DeleteQuestion = ({ questionId }) => {
     const handleDelete = async (e) => {
         e.preventDefault();
         dispatch(deleteOneQuestion(questionId))
+        history.push('/')
         closeModal()
 
     }

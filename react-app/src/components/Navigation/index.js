@@ -9,6 +9,14 @@ import OpenModalButton from '../OpenModalButton';
 function Navigation({ isLoaded }) {
 	const sessionUser = useSelector(state => state.session.user);
 
+	const handleClick = (e) => {
+		e.preventDefault();
+		console.log(<><OpenModalButton modalComponent={<CreateQuestion />} /></>)
+		return (<><OpenModalButton modalComponent={<CreateQuestion />} /></>)
+	}
+
+
+
 	return (
 		<div className='navbar-container'>
 			{sessionUser ? (
@@ -30,8 +38,10 @@ function Navigation({ isLoaded }) {
 						</li>
 					)}
 					{sessionUser ? (
-						<li>
-							<OpenModalButton buttonText={<><i className="fa fa-pen-square"></i></>} modalComponent={<CreateQuestion />}></OpenModalButton>
+						<li >
+							<button onClick={handleClick}>
+								Add Question
+							</button>
 						</li>
 
 					) : (<></>)}

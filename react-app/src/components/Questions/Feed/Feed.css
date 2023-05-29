@@ -39,6 +39,7 @@
 .button-follow:hover,
 .button-unfollow:hover {
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .button-follow {
@@ -120,6 +121,7 @@
     border-radius: 1rem;
     color: white;
     background-color: #4894fd;
+    cursor: pointer;
 }
 
 .login-button:active,

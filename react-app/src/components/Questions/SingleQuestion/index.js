@@ -9,9 +9,11 @@ import { getAllAnswers } from "../../../store/answer";
 import './SingleQuestion.css'
 import CreateAnswer from "../../Answers/CreateAnswer";
 import AnswerItem from "../../Answers/AnswerItem";
+import { useHistory } from "react-router-dom";
 
 
 const SingleQuesiton = () => {
+    const history = useHistory();
     const dispatch = useDispatch();
     const { id } = useParams();
     const currentUser = useSelector(state => state?.session?.user);
@@ -24,7 +26,7 @@ const SingleQuesiton = () => {
         dispatch(getAllAnswers(id))
     }, [dispatch])
 
-
+    if (!currentUser) history.push("/");
 
     return (
         <div >

@@ -51,12 +51,79 @@
 
 .footer {
   position: fixed;
-  color: rgb(245, 41, 54);
+  color: white;
   bottom: 0;
   width: 100%;
-  display: inline-block;
+  display: flex;
   background-color: #282828;
   border: solid 1px black;
   z-index: 1;
   left: 0;
+}
+
+.about-link {
+  text-decoration: none;
+  color: #4894fd;
+  margin-left: 1rem;
+}
+
+.user-container {
+  border-radius: 50%;
+  width: 13px;
+  height: 1px;
+  padding: 1rem;
+  background: #6a4644;
+  border: 0px solid #000;
+  color: white;
+  text-align: left;
+  font: 16px Arial, sans-serif;
+  font-weight: bold;
+  margin-top: 0;
+
+}
+
+.user-circle {
+  margin-left: -.4rem;
+  margin-top: -.5rem;
+}
+
+.add-question {
+  color: rgb(65, 224, 65);
+  text-decoration: solid;
+  font-style: normal;
+  border-radius: 3px;
+  font-size: 15px;
+  padding: 5px 3px;
+  margin: 13px;
+  border: none;
+  background-color: transparent;
+  margin-left: -8px;
+  cursor: pointer;
+}
+
+.nav-bar {
+  background-color: red;
+}
+
+.hello {
+  background-color: red;
+}
+
+.button-green-login {
+  color: rgb(65, 224, 65);
+  text-decoration: solid;
+  font-style: normal;
+  border-radius: 3px;
+  font-size: 15px;
+  padding: 5px 3px;
+  margin: 13px;
+  border: none;
+  background-color: transparent;
+  margin-left: -8px;
+  cursor: pointer;
+}
+
+.log-in-nav-bar {
+
+  background-color: white;
 }

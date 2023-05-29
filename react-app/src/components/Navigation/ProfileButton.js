@@ -10,6 +10,7 @@ function ProfileButton({ user }) {
   const [showMenu, setShowMenu] = useState(false);
   const ulRef = useRef();
 
+
   const openMenu = () => {
     if (showMenu) return;
     setShowMenu(true);
@@ -39,8 +40,8 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button onClick={openMenu}>
-        <i className="fas fa-user-circle" />
+      <button className="user-container" onClick={openMenu}>
+        <div className="user-circle">{user.username[0]}</div>
       </button>
       <ul className={ulClassName} ref={ulRef}>
         {user ? (

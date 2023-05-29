@@ -1,14 +1,19 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import './Navigation.css';
 
-function Footer() {
-    const sessionUser = useSelector(state => state.session.user);
-
+const Footer = () => {
     return (
         <div className='footer'>
-            <p>Brian Washington Jr</p>
+            <p>
+                Brian Washington Jr:
+                <a className='about-link' href='https://github.com/zipzopboppitybop'>
+                    Github
+                </a>
+                <a className='about-link' href='https://www.linkedin.com/in/brian-washington-668129244/'>
+                    Linkedin
+                </a>
+            </p>
+            <p></p>
         </div>
 
     );

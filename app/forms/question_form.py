@@ -4,5 +4,5 @@ from wtforms.validators import DataRequired, Length
 
 
 class QuestionForm(FlaskForm):
-    content = StringField('content', validators=[DataRequired(), Length(min=1, max=130, message='Content must be between 1 to 130 characters')])
+    content = StringField('content', validators=[DataRequired(), Length(min=10, max=130, message='Question must be between 10 to 130 characters')])
     userId = IntegerField('owner')

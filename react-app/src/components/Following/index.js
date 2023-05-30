@@ -13,17 +13,9 @@ const FollowingPage = () => {
 
     return (
         <div>
-            {currentUser ? <ul>
-
-                {Object.values(currentUser.following).map((follow) => (
-                    <li key={follow}>
-                        {follow}
-                    </li>
-                ))}
-            </ul> : (
-                <></>
-            )}
-
+            <h1 className="following-page">
+                This Page is under construction. We appreciate your patience!
+            </h1>
         </div>
     )
 }

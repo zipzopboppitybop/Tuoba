@@ -133,76 +133,76 @@ def seed_answers():
         userId=2,
         questionId=13
     )
-    # answer27 = Answer(
-    #     content="Al Green - Let`s Stay TogetherThis is perhaps the first time the world realised that Barack Obama might just have a singing voice in there somewhere. This speech, back in 2012, was attended by The Reverend Al Green, soul legend and owner of one of the most iconic voices in history.So the former-POTUS decided this would be the time to pay small tribute to a legend, by singing the opening line of Let`s Stay Together. Obama shows total ease with a high tenor line, sensitive and very much in tune. Even more impressive, he`s actually singing in the exactly correct key of the original recording, suggesting there might be something resembling perfect pitch (or at least great intuition) in Obama's musical arsenal.,",
-    #     userId=13,
-    #     questionId=14
-    # )
-    # answer28 = Answer(
-    #     content="I have heard his singing voice and frankly I'm not impressed",
-    #     userId=3,
-    #     questionId=14
-    # )
-    # answer29 = Answer(
-    #     content="Clinton was in the chorus and played the tenor saxophone, winning first chair in the state band's saxophone section. In 1961, Clinton became a member of the Hot Springs Chapter of the Order of DeMolay, a youth group affiliated with Freemasonry, but he never became a Freemason.",
-    #     userId=4,
-    #     questionId=15
-    # )
-    # answer30 = Answer(
-    #     content="I don't know if he can play an instrument, but I sure do know his assistant can play a mean flute.",
-    #     userId=5,
-    #     questionId=15
-    # )
-    # answer31 = Answer(
-    #     content="Eight presidents were musicians, Thomas Jefferson, John Quincy Adams, John Tyler, Warren G. Harding, Harry Truman, Richard Nixon, Bill Clinton, and Barack Obama",
-    #     userId=6,
-    #     questionId=16
-    # )
-    # answer32 = Answer(
-    #     content="The only president I know was a musician was Bill Clinton.",
-    #     userId=7,
-    #     questionId=16
-    # )
-    # answer33 = Answer(
-    #     content="No the composer you're thinking of is Ludwig van Beethoven.",
-    #     userId=8,
-    #     questionId=17
-    # )
-    # answer34 = Answer(
-    #     content="Probably",
-    #     userId=10,
-    #     questionId=17
-    # )
-    # answer35 = Answer(
-    #     content="Beethoven was able to compose even when he was deaf with the help of his 'inner ears', his recollection of sounds and imagination. He also used ear trumpets to channel sound into his ears, and often physical contact with his piano to 'feel' the sound waves.",
-    #     userId=9,
-    #     questionId=18
-    # )
-    # answer36 = Answer(
-    #     content="Maybe he just knew?",
-    #     userId=11,
-    #     questionId=18
-    # )
-    # answer37 = Answer(
-    #     content="The trombone is unique! Instead of having valves like the rest of the brass instruments, the trombone uses a metal slide to change the sounds. A standard trombone is made of long, slender metal tubing.",
-    #     userId=13,
-    #     questionId=19
-    # )
-    # answer38 = Answer(
-    #     content="It sounds worse than most instruments.",
-    #     userId=1,
-    #     questionId=19
-    # )
-    # answer39 = Answer(
-    #     content="It is estimated that there are over 1500 different musical instruments in the world. These instruments are segregated into different categories that include woodwind, percussion, brass, keyboard, and the guitar family.",
-    #     userId=12,
-    #     questionId=20
-    # )
-    # answer40 = Answer(
-    #     content="Atleast 5.",
-    #     userId=2,
-    #     questionId=20
-    # )
+    answer27 = Answer(
+        content="Al Green - Let`s Stay TogetherThis is perhaps the first time the world realised that Barack Obama might just have a singing voice in there somewhere. This speech, back in 2012, was attended by The Reverend Al Green, soul legend and owner of one of the most iconic voices in history.So the former-POTUS decided this would be the time to pay small tribute to a legend, by singing the opening line of Let`s Stay Together. Obama shows total ease with a high tenor line, sensitive and very much in tune. Even more impressive, he`s actually singing in the exactly correct key of the original recording, suggesting there might be something resembling perfect pitch (or at least great intuition) in Obama's musical arsenal.,",
+        userId=13,
+        questionId=14
+    )
+    answer28 = Answer(
+        content="I have heard his singing voice and frankly I'm not impressed",
+        userId=3,
+        questionId=14
+    )
+    answer29 = Answer(
+        content="Clinton was in the chorus and played the tenor saxophone, winning first chair in the state band's saxophone section. In 1961, Clinton became a member of the Hot Springs Chapter of the Order of DeMolay, a youth group affiliated with Freemasonry, but he never became a Freemason.",
+        userId=4,
+        questionId=15
+    )
+    answer30 = Answer(
+        content="I don't know if he can play an instrument, but I sure do know his assistant can play a mean flute.",
+        userId=5,
+        questionId=15
+    )
+    answer31 = Answer(
+        content="Eight presidents were musicians, Thomas Jefferson, John Quincy Adams, John Tyler, Warren G. Harding, Harry Truman, Richard Nixon, Bill Clinton, and Barack Obama",
+        userId=6,
+        questionId=16
+    )
+    answer32 = Answer(
+        content="The only president I know was a musician was Bill Clinton.",
+        userId=7,
+        questionId=16
+    )
+    answer33 = Answer(
+        content="No the composer you're thinking of is Ludwig van Beethoven.",
+        userId=8,
+        questionId=17
+    )
+    answer34 = Answer(
+        content="Probably",
+        userId=10,
+        questionId=17
+    )
+    answer35 = Answer(
+        content="Beethoven was able to compose even when he was deaf with the help of his 'inner ears', his recollection of sounds and imagination. He also used ear trumpets to channel sound into his ears, and often physical contact with his piano to 'feel' the sound waves.",
+        userId=9,
+        questionId=18
+    )
+    answer36 = Answer(
+        content="Maybe he just knew?",
+        userId=11,
+        questionId=18
+    )
+    answer37 = Answer(
+        content="The trombone is unique! Instead of having valves like the rest of the brass instruments, the trombone uses a metal slide to change the sounds. A standard trombone is made of long, slender metal tubing.",
+        userId=13,
+        questionId=19
+    )
+    answer38 = Answer(
+        content="It sounds worse than most instruments.",
+        userId=1,
+        questionId=19
+    )
+    answer39 = Answer(
+        content="It is estimated that there are over 1500 different musical instruments in the world. These instruments are segregated into different categories that include woodwind, percussion, brass, keyboard, and the guitar family.",
+        userId=12,
+        questionId=20
+    )
+    answer40 = Answer(
+        content="Atleast 5.",
+        userId=2,
+        questionId=20
+    )
     # answer41 = Answer(
     #     content="A total of forty-four are used in full orchestras. The string family is the largest family in the orchestra, accounting for over half of the total number of musicians on stage.",
     #     userId=3,
@@ -290,20 +290,20 @@ def seed_answers():
     db.session.add(answer24)
     db.session.add(answer25)
     db.session.add(answer26)
-    # db.session.add(answer27)
-    # db.session.add(answer28)
-    # db.session.add(answer29)
-    # db.session.add(answer30)
-    # db.session.add(answer31)
-    # db.session.add(answer32)
-    # db.session.add(answer33)
-    # db.session.add(answer34)
-    # db.session.add(answer35)
-    # db.session.add(answer36)
-    # db.session.add(answer37)
-    # db.session.add(answer38)
-    # db.session.add(answer39)
-    # db.session.add(answer40)
+    db.session.add(answer27)
+    db.session.add(answer28)
+    db.session.add(answer29)
+    db.session.add(answer30)
+    db.session.add(answer31)
+    db.session.add(answer32)
+    db.session.add(answer33)
+    db.session.add(answer34)
+    db.session.add(answer35)
+    db.session.add(answer36)
+    db.session.add(answer37)
+    db.session.add(answer38)
+    db.session.add(answer39)
+    db.session.add(answer40)
     # db.session.add(answer41)
     # db.session.add(answer42)
     # db.session.add(answer43)

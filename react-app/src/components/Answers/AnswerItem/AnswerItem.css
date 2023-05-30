@@ -12,6 +12,7 @@
 .answer-content {
     word-wrap: break-word;
     word-break: break-word;
+    margin-bottom: .5rem;
 }
 
 .username-initials {

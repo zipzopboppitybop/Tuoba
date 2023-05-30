@@ -14,13 +14,12 @@ I utilized the following technologies to develop SPORK:
 - **SQLAlchemy**: An Object-Relational Mapping (ORM) library that provided a high-level interface for working with our PostgreSQL database.
 - **PostgreSQL**: A powerful open-source relational database that provided a robust and scalable data storage solution.
 
-## Lesson Learned
+## Lessons Learned
 
-Through this project, we learned the importance of effective communication and collaboration when working on a team. We found that it was essential to establish clear goals and expectations at the outset of the project, and to maintain open lines of communication throughout the development process.
+Through this project, I learned that full stack engineering is one of the most demanding jobs out there. Along with having to deal with the front and back end logic I had to also completely design the project myself and that really took a toll on my creativity and software engineering skills in general.
 
-We also learned the value of leveraging existing tools and frameworks to streamline development and improve efficiency. By utilizing technologies like Node.js, React, and SQLAlchemy, we were able to build a robust and scalable application in a relatively short amount of time.
 
-Overall, this project was a valuable learning experience, and we look forward to applying the skills and knowledge we gained to future projects.
+Overall, this project was a valuable learning experience, and I look forward to applying the skills and knowledge I gained to future projects.
 
 
 ## My Links

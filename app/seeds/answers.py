@@ -153,56 +153,56 @@ def seed_answers():
         userId=5,
         questionId=15
     )
-    answer31 = Answer(
-        content="Eight presidents were musicians, Thomas Jefferson, John Quincy Adams, John Tyler, Warren G. Harding, Harry Truman, Richard Nixon, Bill Clinton, and Barack Obama",
-        userId=6,
-        questionId=16
-    )
-    answer32 = Answer(
-        content="The only president I know was a musician was Bill Clinton.",
-        userId=7,
-        questionId=16
-    )
-    answer33 = Answer(
-        content="No the composer you're thinking of is Ludwig van Beethoven.",
-        userId=8,
-        questionId=17
-    )
-    answer34 = Answer(
-        content="Probably",
-        userId=10,
-        questionId=17
-    )
-    answer35 = Answer(
-        content="Beethoven was able to compose even when he was deaf with the help of his 'inner ears', his recollection of sounds and imagination. He also used ear trumpets to channel sound into his ears, and often physical contact with his piano to 'feel' the sound waves.",
-        userId=9,
-        questionId=18
-    )
-    answer36 = Answer(
-        content="Maybe he just knew?",
-        userId=11,
-        questionId=18
-    )
-    answer37 = Answer(
-        content="The trombone is unique! Instead of having valves like the rest of the brass instruments, the trombone uses a metal slide to change the sounds. A standard trombone is made of long, slender metal tubing.",
-        userId=13,
-        questionId=19
-    )
-    answer38 = Answer(
-        content="It sounds worse than most instruments.",
-        userId=1,
-        questionId=19
-    )
-    answer39 = Answer(
-        content="It is estimated that there are over 1500 different musical instruments in the world. These instruments are segregated into different categories that include woodwind, percussion, brass, keyboard, and the guitar family.",
-        userId=12,
-        questionId=20
-    )
-    answer40 = Answer(
-        content="Atleast 5.",
-        userId=2,
-        questionId=20
-    )
+    # answer31 = Answer(
+    #     content="Eight presidents were musicians, Thomas Jefferson, John Quincy Adams, John Tyler, Warren G. Harding, Harry Truman, Richard Nixon, Bill Clinton, and Barack Obama",
+    #     userId=6,
+    #     questionId=16
+    # )
+    # answer32 = Answer(
+    #     content="The only president I know was a musician was Bill Clinton.",
+    #     userId=7,
+    #     questionId=16
+    # )
+    # answer33 = Answer(
+    #     content="No the composer you're thinking of is Ludwig van Beethoven.",
+    #     userId=8,
+    #     questionId=17
+    # )
+    # answer34 = Answer(
+    #     content="Probably",
+    #     userId=10,
+    #     questionId=17
+    # )
+    # answer35 = Answer(
+    #     content="Beethoven was able to compose even when he was deaf with the help of his 'inner ears', his recollection of sounds and imagination. He also used ear trumpets to channel sound into his ears, and often physical contact with his piano to 'feel' the sound waves.",
+    #     userId=9,
+    #     questionId=18
+    # )
+    # answer36 = Answer(
+    #     content="Maybe he just knew?",
+    #     userId=11,
+    #     questionId=18
+    # )
+    # answer37 = Answer(
+    #     content="The trombone is unique! Instead of having valves like the rest of the brass instruments, the trombone uses a metal slide to change the sounds. A standard trombone is made of long, slender metal tubing.",
+    #     userId=13,
+    #     questionId=19
+    # )
+    # answer38 = Answer(
+    #     content="It sounds worse than most instruments.",
+    #     userId=1,
+    #     questionId=19
+    # )
+    # answer39 = Answer(
+    #     content="It is estimated that there are over 1500 different musical instruments in the world. These instruments are segregated into different categories that include woodwind, percussion, brass, keyboard, and the guitar family.",
+    #     userId=12,
+    #     questionId=20
+    # )
+    # answer40 = Answer(
+    #     content="Atleast 5.",
+    #     userId=2,
+    #     questionId=20
+    # )
     # answer41 = Answer(
     #     content="A total of forty-four are used in full orchestras. The string family is the largest family in the orchestra, accounting for over half of the total number of musicians on stage.",
     #     userId=3,
@@ -294,16 +294,16 @@ def seed_answers():
     db.session.add(answer28)
     db.session.add(answer29)
     db.session.add(answer30)
-    db.session.add(answer31)
-    db.session.add(answer32)
-    db.session.add(answer33)
-    db.session.add(answer34)
-    db.session.add(answer35)
-    db.session.add(answer36)
-    db.session.add(answer37)
-    db.session.add(answer38)
-    db.session.add(answer39)
-    db.session.add(answer40)
+    # db.session.add(answer31)
+    # db.session.add(answer32)
+    # db.session.add(answer33)
+    # db.session.add(answer34)
+    # db.session.add(answer35)
+    # db.session.add(answer36)
+    # db.session.add(answer37)
+    # db.session.add(answer38)
+    # db.session.add(answer39)
+    # db.session.add(answer40)
     # db.session.add(answer41)
     # db.session.add(answer42)
     # db.session.add(answer43)

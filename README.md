@@ -6,12 +6,12 @@ Welcome to TUOBA, a modern web app that enables users to ask questions and share
 
 I utilized the following technologies to develop SPORK:
 
-- **Node.js**: A server-side runtime environment that enabled us to build scalable and high-performance applications.
-- **React**: A JavaScript library that helped us create a dynamic and responsive user interface.
-- **Redux**: A predictable state container that helped us manage complex application state across components.
-- **Flask**: A micro web framework that allowed us to build the backend of our application with Python.
-- **Python**: A high-level programming language that enabled us to implement complex functionality with ease.
-- **SQLAlchemy**: An Object-Relational Mapping (ORM) library that provided a high-level interface for working with our PostgreSQL database.
+- **Node.js**: A server-side runtime environment that enabled me to build scalable and high-performance applications.
+- **React**: A JavaScript library that helped me create a dynamic and responsive user interface.
+- **Redux**: A predictable state container that helped me manage complex application state across components.
+- **Flask**: A micro web framework that allowed me to build the backend of our application with Python.
+- **Python**: A high-level programming language that enabled me to implement complex functionality with ease.
+- **SQLAlchemy**: An Object-Relational Mapping (ORM) library that provided a high-level interface for working with my PostgreSQL database.
 - **PostgreSQL**: A powerful open-source relational database that provided a robust and scalable data storage solution.
 
 ## Lessons Learned

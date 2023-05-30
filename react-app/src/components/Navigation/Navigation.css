@@ -154,3 +154,7 @@
 .errors-list {
   list-style: none;
 }
+
+.update-something {
+  font-size: .6rem;
+}

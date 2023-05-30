@@ -23,7 +23,7 @@ const DeleteQuestion = ({ questionId }) => {
     }
 
     return (
-        <div>
+        <div className="form-modal">
             <div>Are you sure you want to delete this question?</div>
             <button onClick={handleDelete}>
                 Yes, delete this Question

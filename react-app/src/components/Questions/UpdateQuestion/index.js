@@ -20,6 +20,8 @@ const UpdateQuestion = ({ question }) => {
         if (updatedQuestion) {
             closeModal();
             dispatch(getAllQuestions())
+        } else {
+            closeModal();
         }
 
     }
@@ -29,14 +31,15 @@ const UpdateQuestion = ({ question }) => {
     }
 
     return (
-        <div>
-            <form>
+        <div className="form-modal">
+            <form className="form-modal">
                 {/* <ul>
                     {errors.map((error, idx) => (
                         <li key={idx}>{error}</li>
                     ))}
                 </ul> */}
                 <textarea
+                    className="form-modal"
                     rows="8"
                     cols="60"
                     placeholder={question?.content}
@@ -48,6 +51,7 @@ const UpdateQuestion = ({ question }) => {
                 <button onClick={handleCancel}>Close</button>
             </span>
             <button onClick={onSubmit}>PostNow</button>
+            <span className="update-something">If you try to edit question less than 10 characters modal will close</span>
         </div>
     )
 }

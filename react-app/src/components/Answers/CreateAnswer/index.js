@@ -25,7 +25,6 @@ const CreateAnswer = ({ questionId }) => {
         } else {
             closeModal();
             dispatch(getOneQuestion(questionId))
-            history.push('/')
         }
 
     }

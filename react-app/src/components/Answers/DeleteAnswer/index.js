@@ -24,7 +24,7 @@ const DeleteAnswer = ({ answerId }) => {
     }
 
     return (
-        <div>
+        <div className="form-modal">
             <div>Are you sure you want to delete this answer?</div>
             <button onClick={handleDelete}>
                 Yes, delete this Answer

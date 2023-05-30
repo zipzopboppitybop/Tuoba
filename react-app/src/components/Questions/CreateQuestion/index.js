@@ -34,12 +34,13 @@ const CreateQuestion = () => {
     }
 
     return (
-        <div>
-            <form>
+        <div className="form-modal">
+            <form className="form-modal">
                 {errors.length > 0 ? <div className="color-red">
                     Question must be between 10 or 130 characters!
                 </div> : <></>}
                 <textarea
+                    className="form-modal"
                     rows="8"
                     cols="60"
                     placeholder="Go ahead, put anything."

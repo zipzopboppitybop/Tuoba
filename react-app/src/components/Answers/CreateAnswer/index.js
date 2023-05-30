@@ -7,6 +7,7 @@ import { useHistory } from "react-router-dom";
 
 
 const CreateAnswer = ({ questionId }) => {
+    const history = useHistory();
     const { closeModal } = useModal()
     const dispatch = useDispatch();
     const currentUser = useSelector(state => state?.session?.user);
@@ -24,9 +25,11 @@ const CreateAnswer = ({ questionId }) => {
         } else {
             closeModal();
             dispatch(getOneQuestion(questionId))
+            history.push('/')
         }
 
     }
+
 
     const handleCancel = (e) => {
         e.preventDefault();
@@ -34,15 +37,13 @@ const CreateAnswer = ({ questionId }) => {
     }
 
     return (
-        <div>
-            <form>
-                <ul>
-                    {errors.map((error, idx) => (
-                        <li key={idx}>{error}</li>
-                    ))}
-                </ul>
+        <div className="form-modal">
+            <form className="form-modal">
+                {errors.length > 0 ? <div className="color-red">
+                    Answer must be between 10 or 255 characters!
+                </div> : <></>}
                 <textarea
-                    // className="create-post-textarea"
+                    className="form-modal"
                     rows="8"
                     cols="60"
                     placeholder="Write an answer."
@@ -50,7 +51,7 @@ const CreateAnswer = ({ questionId }) => {
                     onChange={(e) => setContent(e.target.value)}
                 />
             </form>
-            <span>
+            <span >
                 <button onClick={handleCancel}>Close</button>
             </span>
             <button onClick={onSubmit}>PostNow</button>

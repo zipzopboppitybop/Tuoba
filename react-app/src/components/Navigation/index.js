@@ -11,8 +11,7 @@ function Navigation({ isLoaded }) {
 
 	const handleClick = (e) => {
 		e.preventDefault();
-		console.log(<><OpenModalButton modalComponent={<CreateQuestion />} /></>)
-		return (<><OpenModalButton modalComponent={<CreateQuestion />} /></>)
+		console.log()
 	}
 
 
@@ -38,10 +37,8 @@ function Navigation({ isLoaded }) {
 						</li>
 					)}
 					{sessionUser ? (
-						<li >
-							<button onClick={handleClick}>
-								Add Question
-							</button>
+						<li className='create-question-div'>
+							<OpenModalButton className="span-create-post" buttonText={<><i className="fas fa-pen-square">Add Question</i></>} modalComponent={<CreateQuestion />}></OpenModalButton>
 						</li>
 
 					) : (<></>)}

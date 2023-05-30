@@ -24,6 +24,15 @@ ul {
     padding: 0;
 }
 
+.answer-button {
+    margin: auto;
+    background-color: red;
+}
+
 .fa-pen-square {
-    margin-left: 5rem;
+    border-radius: 1rem;
+}
+
+.question-content button {
+    border-radius: 1rem;
 }

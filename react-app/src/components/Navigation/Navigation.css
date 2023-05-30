@@ -57,7 +57,6 @@
   display: flex;
   background-color: #282828;
   border: solid 1px black;
-  z-index: 1;
   left: 0;
 }
 
@@ -126,4 +125,32 @@
 .log-in-nav-bar {
 
   background-color: white;
+}
+
+.color-red {
+  color: red;
+}
+
+.create-question-div {
+  margin-top: .3rem;
+  margin-left: .3rem;
+
+}
+
+.span-create-post {
+  background-color: red;
+}
+
+.form-modal {
+  background-color: #282828;
+  color: white;
+
+}
+
+.signup-errors {
+  color: red;
+}
+
+.errors-list {
+  list-style: none;
 }

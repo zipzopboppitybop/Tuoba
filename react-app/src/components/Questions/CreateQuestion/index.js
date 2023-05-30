@@ -36,11 +36,9 @@ const CreateQuestion = () => {
     return (
         <div>
             <form>
-                <ul>
-                    {errors.map((error, idx) => (
-                        <li key={idx}>{error}</li>
-                    ))}
-                </ul>
+                {errors.length > 0 ? <div className="color-red">
+                    Question must be between 10 or 130 characters!
+                </div> : <></>}
                 <textarea
                     rows="8"
                     cols="60"

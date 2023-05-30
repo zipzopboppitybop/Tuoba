@@ -26,9 +26,9 @@ function LoginFormModal() {
       <h1  >Log In</h1>
       <form className="form-login" onSubmit={handleSubmit}>
         <ul>
-          {errors.map((error, idx) => (
-            <li key={idx}>{error}</li>
-          ))}
+          {errors.length > 0 ? <div className="signup-errors">
+            Credentials Invalid
+          </div> : <></>}
         </ul>
         <label className="form-label">
           Email

@@ -48,12 +48,16 @@ const SingleQuesiton = () => {
                 ) : (
                     <></>
                 )}
+                {currentUser?.id ? (
+                    <div>
+                        <OpenModalButton buttonText={<><i className="fas fa-pen-square">Answer</i></>} modalComponent={<CreateAnswer questionId={question?.id} />}></OpenModalButton>
+                    </div>
+
+                ) : (
+                    <></>
+                )}
             </div>
-            {currentUser?.id ? (
-                <OpenModalButton buttonText={<><i className="fa fa-pen-square"></i></>} modalComponent={<CreateAnswer questionId={question?.id} />}></OpenModalButton>
-            ) : (
-                <></>
-            )}
+
 
 
             <ul>

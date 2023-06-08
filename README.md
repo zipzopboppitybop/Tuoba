@@ -1,26 +1,90 @@
 # TUOBA
 
-Welcome to TUOBA, a modern web app that enables users to ask questions and share answers with other users. With TUOBA, you can share your thoughts, ideas, and experiences with the world, and connect with like-minded individuals who share your interests.
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+Tuoba is a soft clone of Quora. Here you can ask any music related question and get answers from fellow users. You can also answer other user's questions.
+
+<br />
+
+Check out [Tuoba](https://tuoba.onrender.com)!
+
+## Index
+
+[MVP Feature List](https://github.com/zipzopboppitybop/Tuoba/wiki/Features) | [Database Schema](https://github.com/zipzopboppitybop/Tuoba/wiki/Database-Schema) |
+[User Stories](https://github.com/zipzopboppitybop/Tuoba/wiki/User-Stories) | [WireFrame](https://github.com/zipzopboppitybop/Tuoba/wiki/Wireframe)
 
 ## Technologies Used
-
-I utilized the following technologies to develop SPORK:
-
-- **Node.js**: A server-side runtime environment that enabled me to build scalable and high-performance applications.
-- **React**: A JavaScript library that helped me create a dynamic and responsive user interface.
-- **Redux**: A predictable state container that helped me manage complex application state across components.
-- **Flask**: A micro web framework that allowed me to build the backend of our application with Python.
-- **Python**: A high-level programming language that enabled me to implement complex functionality with ease.
-- **SQLAlchemy**: An Object-Relational Mapping (ORM) library that provided a high-level interface for working with my PostgreSQL database.
-- **PostgreSQL**: A powerful open-source relational database that provided a robust and scalable data storage solution.
-
-## Lessons Learned
-
-Through this project, I learned that full stack engineering is one of the most demanding jobs out there. Along with having to deal with the front and back end logic I had to also completely design the project myself and that really took a toll on my creativity and software engineering skills in general.
+<img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" /><img src="https://img.shields.io/badge/Python-3776AB.svg?style=for-the-badge&logo=Python&logoColor=white" /><img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" /><img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" /><img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" /><img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" /><img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" /><img src="https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white" /><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" /><img src="https://img.shields.io/badge/Flask-000000.svg?style=for-the-badge&logo=Flask&logoColor=white" />
 
 
-Overall, this project was a valuable learning experience, and I look forward to applying the skills and knowledge I gained to future projects.
+## Splash Page
 
+### Not Logged In
+![Splash](./react-app/images/splash.png)
+
+### Logged In
+![Splash-Gif](./react-app/images/splash-gif.gif)
+
+### Single Question And Answers
+![Single-Question](./react-app/images/single-question.png)
+
+## Getting started
+1. Clone this repository:
+
+   `
+   https://github.com/zipzopboppitybop/Tuoba
+   `
+2. Install denpendencies into the Backend and the Frontend by making a terminal for each one and then run the following:
+
+   * `npm install`
+
+3. Create a **.env** file using the **.envexample** provided
+
+4. Set up your database with information from your .env and then run the following to create your database, migrate, and seed:
+
+   * `npx dotenv sequelize db:create`
+   * `npx dotenv sequelize db:migrate`
+   * `npx dotenv sequelize db:seed:all`
+
+5. Start the app for both backend and frontend using:
+
+   * `npm start`
+
+6. Now you can use the Demo User or Create an account
+
+***
+
+# Features
+
+## Questions
+* Logged in Users can ask a Queston
+* Users can read/view other Question
+* Logged in Users can update their Question
+* Logged in Users can delete their Question
+
+## Answers
+* Logged in Users can answer Questions
+* Users can read/view all of the Answers on a Question
+* Logged in Users can delete their Answers on a Question
+* Logged in Users can update their Answers on a Question
+
+## Follows
+Logged-in Users can
+* Follow other users
+* Unfollow other users
+
+## Likes
+Logged-in Users can
+* Like Answers on Questions
+* UnLike Answers on Questions
+
+
+## Future Features
+
+### Search Feature
+* Users can search for questions
+
+### User Profile
+* Users can update and delete their profile
 
 ## My Links
 

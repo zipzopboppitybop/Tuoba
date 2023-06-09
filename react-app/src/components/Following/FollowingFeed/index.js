@@ -17,21 +17,10 @@ const FollowingPage = () => {
 
     if (!currentUser) history.push("/")
 
-    console.log(following)
 
     return (
         <div>
-            <ul>
-                {Object?.values(following.following)?.map(follow => (
-                    <li key={follow.id}>
-                        <FollowingItem follow={follow} />
-                    </li>
-
-                )
-
-                )}
-
-            </ul>
+            <h1>This page is under Construction!</h1>
 
         </div>
     )

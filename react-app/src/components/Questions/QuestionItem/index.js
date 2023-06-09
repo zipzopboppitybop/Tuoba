@@ -15,8 +15,6 @@ const QuestionItem = ({ question }) => {
     const initials = question?.owner?.username[0]
     const answers = Object.values(question.answers)
 
-    console.log()
-
     const onSubmitFollow = async (e) => {
         e.preventDefault()
 

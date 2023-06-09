@@ -9,13 +9,6 @@ import OpenModalButton from '../OpenModalButton';
 function Navigation({ isLoaded }) {
 	const sessionUser = useSelector(state => state.session.user);
 
-	const handleClick = (e) => {
-		e.preventDefault();
-		console.log()
-	}
-
-
-
 	return (
 		<div className='navbar-container'>
 			{sessionUser ? (

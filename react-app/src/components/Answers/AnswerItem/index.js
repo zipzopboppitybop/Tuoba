@@ -11,6 +11,7 @@ const AnswerItem = ({ answer }) => {
     const dispatch = useDispatch();
     const currentUser = useSelector(state => state?.session?.user);
     const initials = answer?.owner?.username[0];
+    const count = answer?.likes.length
 
 
     const onSubmitLike = async (e) => {
@@ -38,6 +39,8 @@ const AnswerItem = ({ answer }) => {
 
             <div>
                 {currentUser && !answer?.likes?.find(id => id === currentUser?.id) && (currentUser?.id !== answer?.userId) ? <button className="like-button" onClick={onSubmitLike}><i className="far fa-heart"></i></button> : currentUser && answer?.likes?.find(id => id === currentUser?.id) && (currentUser?.id !== answer?.userId) ? <button className="unlike-button" onClick={onSubmitLike}><i className="fas fa-heart" ></i></button> : <></>}
+                <span className="count">{count}</span>
+
             </div>
 
             {currentUser?.id === answer?.userId ? (

@@ -7,6 +7,10 @@
   border-radius: .3rem;
 }
 
+.count {
+  margin-left: .3rem;
+}
+
 .logout-button {
   color: white;
   background-color: #282828;

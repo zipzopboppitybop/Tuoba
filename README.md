@@ -33,23 +33,31 @@ Check out [Tuoba](https://tuoba.onrender.com)!
    `
    https://github.com/zipzopboppitybop/Tuoba
    `
-2. Install denpendencies into the Backend and the Frontend by making a terminal for each one and then run the following:
+2. Install denpendencies into the root of the repository with the following:
 
-   * `npm install`
+   * `pipenv install -r requirements.txt`
 
 3. Create a **.env** file using the **.envexample** provided
 
 4. Set up your database with information from your .env and then run the following to create your database, migrate, and seed:
 
-   * `npx dotenv sequelize db:create`
-   * `npx dotenv sequelize db:migrate`
-   * `npx dotenv sequelize db:seed:all`
+   * `pipenv shell`
+   * `flask db upgrade`
+   * `flask seed all
 
-5. Start the app for both backend and frontend using:
+5. Start the app for backend using:
+
+   * `flask run`
+
+6. Install denpendencies into the frontend repository with the following:
+
+   * `npm install`
+
+7. Start the app for frontend using:
 
    * `npm start`
 
-6. Now you can use the Demo User or Create an account
+8. Now you can use the Demo User or Create an account
 
 ***
 

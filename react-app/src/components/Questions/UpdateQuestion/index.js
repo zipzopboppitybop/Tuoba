@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { updateOneQuestion, getOneQuestion } from "../../../store/question";
+import { updateOneQuestion, getOneQuestion, getAllQuestions } from "../../../store/question";
 import { useModal } from "../../../context/Modal";
 
 const UpdateQuestion = ({ question }) => {
@@ -22,6 +22,7 @@ const UpdateQuestion = ({ question }) => {
         if (updatedQuestion.id) {
             closeModal()
             dispatch(getOneQuestion(question.id))
+            dispatch(getAllQuestions());
         }
 
     };

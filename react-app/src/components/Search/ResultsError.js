@@ -7,7 +7,6 @@ function ResultsErrorMessage() {
     <div className='no-results'>
       <h1>Sorry, there are no results for {query}.</h1>
       <h2>Please search for Questions or user's names.</h2>
-      <h3></h3>
     </div>
   )
 }

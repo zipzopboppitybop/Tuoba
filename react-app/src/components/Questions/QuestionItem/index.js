@@ -25,9 +25,6 @@ const QuestionItem = ({ question }) => {
         mostLikes = answers.reduce((max, answer) => max.likes > answer.likes ? max : answer);
     }
 
-
-    console.log(mostLikes)
-
     return (
         <div>
             <div className="username-unfollow-follow">

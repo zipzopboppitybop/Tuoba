@@ -71,7 +71,6 @@ export const updateOneAnswer = (answer, answerId) => async (dispatch) => {
         return res
     } else if (response.status < 500) {
         const data = await response.json();
-        console.log(data)
         if (data.errors) {
             return data.errors;
         }

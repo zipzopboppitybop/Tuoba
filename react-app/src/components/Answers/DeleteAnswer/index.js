@@ -1,14 +1,9 @@
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
 import { deleteOneAnswer } from "../../../store/answer";
-import { useSelector } from "react-redux";
-import { useState } from "react";
 import { useModal } from "../../../context/Modal";
-
 
 const DeleteAnswer = ({ answerId }) => {
     const { closeModal } = useModal();
-    const history = useHistory();
     const dispatch = useDispatch();
 
     const handleDelete = async (e) => {

@@ -10,7 +10,7 @@ const Profile = () => {
     const currentUser = useSelector(state => state?.session?.user);
     useEffect(() => {
         dispatch(getAUser(id))
-    }, [dispatch,])
+    }, [dispatch, id])
 
     return (
         <div>

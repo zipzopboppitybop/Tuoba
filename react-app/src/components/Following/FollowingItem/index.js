@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux"
-import { NavLink } from "react-router-dom";
 import { getUserFollowing, getFollowsForUser } from "../../../store/follow";
 
 const FollowingItem = ({ follow }) => {
@@ -18,8 +17,7 @@ const FollowingItem = ({ follow }) => {
 
     useEffect(() => {
         dispatch(getUserFollowing(currentUser.id))
-        // dispatch(getFollowsForUser(follow.id))
-    }, [dispatch])
+    }, [dispatch, currentUser.id])
     return (
         <div className="username-unfollow-follow following-item">
             <div className="circle">{initials}</div>

@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux"
-import OpenModalButton from "../../OpenModalButton"
 import { useParams } from "react-router-dom";
 import { getOneQuestion } from "../../../store/question";
 import { getAllAnswers } from "../../../store/answer";
@@ -24,7 +23,7 @@ const SingleQuesiton = () => {
     useEffect(() => {
         dispatch(getOneQuestion(id))
         dispatch(getAllAnswers(id))
-    }, [dispatch])
+    }, [dispatch, id])
 
     if (!question) {
         return (

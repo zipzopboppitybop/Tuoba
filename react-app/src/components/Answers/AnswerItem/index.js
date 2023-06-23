@@ -1,9 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux"
-import OpenModalButton from "../../OpenModalButton";
 import { getAllAnswers } from "../../../store/answer";
-import DeleteAnswer from "../../Answers/DeleteAnswer";
-import UpdateAnswer from "../../Answers/UpdateAnswer";
 import { likeOneAnswer } from "../../../store/like";
 import UpdateDeleteAnswer from "./UpdateDeleteAnswer";
 import "./AnswerItem.css"

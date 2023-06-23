@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { createOneAnswer } from "../../../store/answer";
 import { getOneQuestion } from "../../../store/question";
 import { useModal } from "../../../context/Modal";
-import { useHistory } from "react-router-dom";
 
 
 const CreateAnswer = ({ question }) => {

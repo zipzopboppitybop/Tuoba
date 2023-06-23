@@ -12,7 +12,7 @@ const FollowingPage = () => {
     const following = useSelector(state => state?.follows)
     useEffect(() => {
         dispatch(getUserFollowing(currentUser.id))
-    }, [dispatch,])
+    }, [dispatch, currentUser.id])
 
     if (!currentUser) history.push("/")
 

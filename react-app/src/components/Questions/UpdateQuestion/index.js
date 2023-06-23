@@ -21,8 +21,6 @@ const UpdateQuestion = ({ question }) => {
         }
         if (updatedQuestion.id) {
             closeModal()
-            dispatch(getOneQuestion(question.id))
-            dispatch(getAllQuestions());
         }
 
     };

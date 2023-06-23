@@ -6,11 +6,9 @@ import { useModal } from "../../../context/Modal";
 import { useHistory } from "react-router-dom";
 
 
-const CreateAnswer = ({ questionId }) => {
-    const history = useHistory();
+const CreateAnswer = ({ question }) => {
     const { closeModal } = useModal()
     const dispatch = useDispatch();
-    const currentUser = useSelector(state => state?.session?.user);
     const [content, setContent] = useState('');
     const [errors, setErrors] = useState([]);
 
@@ -19,16 +17,15 @@ const CreateAnswer = ({ questionId }) => {
         const newAnswer = {
             content: content
         }
-        const successAnswer = await dispatch(createOneAnswer(newAnswer, questionId))
+        const successAnswer = await dispatch(createOneAnswer(newAnswer, question.id))
         if (successAnswer) {
             setErrors(successAnswer);
         } else {
             closeModal();
-            dispatch(getOneQuestion(questionId))
+            dispatch(getOneQuestion(question.id))
         }
 
     }
-
 
     const handleCancel = (e) => {
         e.preventDefault();
@@ -36,24 +33,27 @@ const CreateAnswer = ({ questionId }) => {
     }
 
     return (
-        <div className="form-modal">
-            <form className="form-modal">
+        <div className="form-modal stuff">
+            <h2 className="extra-padding answer-question-title">{question.content}</h2>
+            <form className="extra-padding">
                 {errors.length > 0 ? <div className="color-red">
-                    Answer must be between 10 or 255 characters!
+                    Answer must be between 10 or 500 characters!
                 </div> : <></>}
                 <textarea
-                    className="form-modal"
+                    className="answer-modal"
                     rows="8"
                     cols="60"
                     placeholder="Write an answer."
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
                 />
+
             </form>
-            <span >
-                <button onClick={handleCancel}>Close</button>
-            </span>
-            <button onClick={onSubmit}>PostNow</button>
+            <div className="question-form-buttons answer-buttons">
+                <button className="close-button" onClick={handleCancel}>Close</button>
+                <button className="create-button" onClick={onSubmit}>Post</button>
+
+            </div>
         </div>
     )
 }

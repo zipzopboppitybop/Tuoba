@@ -1,12 +1,10 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux"
-import DeleteQuestion from "../DeleteQuestion"
-import OpenModalButton from "../../OpenModalButton"
-import UpdateQuestion from "../UpdateQuestion";
 import { NavLink } from "react-router-dom";
 import './QuestionItem.css'
 import { getFollowsForUser } from "../../../store/follow";
 import { getAllQuestions } from "../../../store/question";
+import UpdateDeleteQuestion from "./UpdateDeleteQuestion";
 
 const QuestionItem = ({ question }) => {
     const dispatch = useDispatch();
@@ -22,6 +20,10 @@ const QuestionItem = ({ question }) => {
         dispatch(getAllQuestions())
     }
 
+    let mostLikes = answers.reduce((max, answer) => max.likes > answer.likes ? max : answer);
+
+    console.log(mostLikes)
+
     return (
         <div>
             <div className="username-unfollow-follow">
@@ -34,20 +36,14 @@ const QuestionItem = ({ question }) => {
                 {question?.content}
             </NavLink>
             <div className="question-answer">
-                {answers[0]?.content}
+                {mostLikes?.content}
             </div>
 
-
             {currentUser?.id === question?.userId ? (
-                <div>
-                    <OpenModalButton
-                        buttonText={<><i className="fas fa-trash-alt"></i></>}
-                        modalComponent={<DeleteQuestion questionId={question?.id} />}
-                    />
-
-                    <OpenModalButton
-                        buttonText={<><i className="fa fa-pencil"></i></>}
-                        modalComponent={<UpdateQuestion question={question} />}
+                <div className="edit-delete-container">
+                    <UpdateDeleteQuestion
+                        user={currentUser}
+                        question={question}
                     />
                 </div>
             ) : (

@@ -12,7 +12,7 @@ const CreateQuestion = () => {
     const [content, setContent] = useState('');
     const [errors, setErrors] = useState([]);
 
-    const onSubmit = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         const newQuestion = {
             content: content
@@ -34,24 +34,29 @@ const CreateQuestion = () => {
     }
 
     return (
-        <div className="form-modal">
-            <form className="form-modal">
-                {errors.length > 0 ? <div className="color-red">
-                    Question must be between 10 or 130 characters!
-                </div> : <></>}
+        <div className="form-modal" >
+            <form onSubmit={handleSubmit}>
+
                 <textarea
-                    className="form-modal"
+                    className="question-form"
                     rows="8"
                     cols="60"
-                    placeholder="Go ahead, put anything."
+                    placeholder='Start your question with "What", "How", "Why", etc.'
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
                 />
+                <div className="question-form-buttons">
+                    {errors.length > 0 ? <span className="color-red create-error">
+                        Question must be between 10 or 130 characters!
+                    </span> : <></>}
+                    <span>
+                        <button className="close-button" onClick={handleCancel}>Cancel</button>
+                    </span>
+                    <button className="create-button" type="submit" >Add Question</button>
+                </div>
+
             </form>
-            <span>
-                <button onClick={handleCancel}>Close</button>
-            </span>
-            <button onClick={onSubmit}>PostNow</button>
+
         </div>
     )
 }

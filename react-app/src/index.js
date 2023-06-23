@@ -6,8 +6,10 @@ import { BrowserRouter } from "react-router-dom";
 import { ModalProvider, Modal } from "./context/Modal";
 import configureStore from "./store";
 import * as sessionActions from "./store/session";
-import * as questionActions from "./store/question"
-import * as answerActions from "./store/answer"
+import * as questionActions from "./store/question";
+import * as answerActions from "./store/answer";
+import * as followingActions from "./store/follow";
+import * as usersActions from "./store/user";
 import App from "./App";
 
 import "./index.css";
@@ -19,6 +21,8 @@ if (process.env.NODE_ENV !== "production") {
 	window.sessionActions = sessionActions;
 	window.questionActions = questionActions;
 	window.answerActions = answerActions;
+	window.followingActions = followingActions;
+	window.usersActions = usersActions;
 }
 
 // Wrap the application with the Modal provider and render the Modal component

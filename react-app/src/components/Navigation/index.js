@@ -5,6 +5,8 @@ import ProfileButton from './ProfileButton';
 import './Navigation.css';
 import CreateQuestion from '../Questions/CreateQuestion';
 import OpenModalButton from '../OpenModalButton';
+import SearchBar from '../Search/SearchBar';
+import CreateQuestionModal from '../Modals/CreateQuestionModal';
 
 function Navigation({ isLoaded }) {
 	const sessionUser = useSelector(state => state.session.user);
@@ -13,25 +15,26 @@ function Navigation({ isLoaded }) {
 		<div className='navbar-container'>
 			{sessionUser ? (
 				<ul className='navbar'>
-					<li className='title'>
+					<li className='title '>
 						<Link className='logo' title='Home' exact to="/">
 							Tuoba
 						</Link>
 					</li>
+
 					<li>
-						<NavLink title='Home' className='fa  fa-home' exact to="/"></NavLink>
+						<NavLink title='Following' className='fa  fas fa-book nav-item' exact to="/following"></NavLink>
 					</li>
-					<li>
-						<NavLink title='Following' className='fa  fas fa-book' exact to="/following"></NavLink>
-					</li>
+					<div className="search-bar">
+						< SearchBar />
+					</div>
 					{isLoaded && (
-						<li>
+						<li className='nav-item'>
 							<ProfileButton user={sessionUser} />
 						</li>
 					)}
 					{sessionUser ? (
 						<li className='create-question-div'>
-							<OpenModalButton className="span-create-post" buttonText={<><i className="fas fa-pen-square">Add Question</i></>} modalComponent={<CreateQuestion />}></OpenModalButton>
+							<CreateQuestionModal buttonText="Add Question" modalComponent={<CreateQuestion />} />
 						</li>
 
 					) : (<></>)}
@@ -39,6 +42,10 @@ function Navigation({ isLoaded }) {
 			) : (
 				<></>
 			)}
+
+			<div>
+
+			</div>
 
 		</div>
 

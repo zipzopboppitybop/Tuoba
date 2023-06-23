@@ -35,7 +35,7 @@ function SignupFormModal() {
 			<form className="form-login" onSubmit={handleSubmit}>
 				<ul className="errors-list">
 					{errors.map((error, idx) => (
-						<li className="signup-errors" key={idx}>{error}</li>
+						<li className="color-red" key={idx}>{error}</li>
 					))}
 				</ul>
 				<label className="form-label">

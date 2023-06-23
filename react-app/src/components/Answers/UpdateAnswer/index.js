@@ -3,27 +3,26 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateOneAnswer } from "../../../store/answer";
 import { getOneQuestion } from "../../../store/question";
 import { useModal } from "../../../context/Modal";
-import { useHistory, useParams } from "react-router-dom";
 
-
-const UpdateAnswer = ({ answer }) => {
+const UpdateAnswer = ({ answer, question }) => {
     const { closeModal } = useModal()
     const dispatch = useDispatch();
-    const currentUser = useSelector(state => state?.session?.user);
     const [content, setContent] = useState(answer?.content)
     const [errors, setErrors] = useState([]);
-    const questionId = useParams();
 
-    const onSubmit = async (e) => {
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         const updateAnswer = {
             content: content
         }
         const updatedAnswer = await dispatch(updateOneAnswer(updateAnswer, answer?.id))
         if (updatedAnswer) {
+            setErrors(updatedAnswer)
+        }
+        if (updatedAnswer.id) {
             closeModal();
-            dispatch(getOneQuestion(questionId))
-        } else {
-            closeModal();
+            // dispatch(getOneQuestion(question.id))
         }
 
     }
@@ -34,26 +33,26 @@ const UpdateAnswer = ({ answer }) => {
 
     return (
         <div className="form-modal">
-            <form className="form-modal">
-                {/* <ul>
-                    {errors.map((error, idx) => (
-                        <li key={idx}>{error}</li>
-                    ))}
-                </ul> */}
+            <h2 className="extra-padding answer-question-title">{question.content}</h2>
+            <form onSubmit={handleSubmit} className="extra-padding" >
                 <textarea
-                    className="form-modal"
+                    className="answer-modal"
                     rows="8"
                     cols="60"
-                    placeholder={answer?.content}
+                    placeholder={question?.content}
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
                 />
+                <div className="question-form-buttons">
+                    {errors.length > 0 ? <span className="color-red create-error">
+                        Answer must be between 10 or 500 characters!
+                    </span> : <></>}
+                    <span>
+                        <button className="close-button" onClick={handleCancel}>Cancel</button>
+                    </span>
+                    <button className="update-button" type="submit" >Update Answer</button>
+                </div>
             </form>
-            <span>
-                <button onClick={handleCancel}>Close</button>
-            </span>
-            <button onClick={onSubmit}>PostNow</button>
-            <span className="update-something">If you try to edit answer less than 10 characters modal will close</span>
         </div>
     )
 }

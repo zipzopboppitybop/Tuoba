@@ -18,7 +18,8 @@ export default function usersReducer(state = {}, action) {
     switch (action.type) {
         case GET_USER:
             newState = {}
-            newState.currentUser = action.user
+            // console.log(action.payload)
+            newState.user = action.payload
             return newState
         default:
             return state;

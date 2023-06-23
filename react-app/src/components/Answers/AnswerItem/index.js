@@ -5,14 +5,14 @@ import { getAllAnswers } from "../../../store/answer";
 import DeleteAnswer from "../../Answers/DeleteAnswer";
 import UpdateAnswer from "../../Answers/UpdateAnswer";
 import { likeOneAnswer } from "../../../store/like";
+import UpdateDeleteAnswer from "./UpdateDeleteAnswer";
 import "./AnswerItem.css"
 
-const AnswerItem = ({ answer }) => {
+const AnswerItem = ({ answer, question }) => {
     const dispatch = useDispatch();
     const currentUser = useSelector(state => state?.session?.user);
     const initials = answer?.owner?.username[0];
     const count = answer?.likes.length
-
 
     const onSubmitLike = async (e) => {
         e.preventDefault()
@@ -37,25 +37,24 @@ const AnswerItem = ({ answer }) => {
                 {answer?.content}
             </div>
 
-            <div>
-                {currentUser && !answer?.likes?.find(id => id === currentUser?.id) && (currentUser?.id !== answer?.userId) ? <button className="like-button" onClick={onSubmitLike}><i className="far fa-heart"></i></button> : currentUser && answer?.likes?.find(id => id === currentUser?.id) && (currentUser?.id !== answer?.userId) ? <button className="unlike-button" onClick={onSubmitLike}><i className="fas fa-heart" ></i></button> : <></>}
-                <span className="count">{count}</span>
-
-            </div>
-
             {currentUser?.id === answer?.userId ? (
-                <div>
-                    <OpenModalButton
-                        buttonText={<><i className="fas fa-trash-alt"></i></>}
-                        modalComponent={<DeleteAnswer answerId={answer?.id} />}
-                    />
-                    <OpenModalButton
-                        buttonText={<><i className="fa fa-pencil"></i></>}
-                        modalComponent={<UpdateAnswer answer={answer} />}
+                <div className="edit-delete-container answer-likes">
+                    <span className="count">Likes
+                        <span> &middot; {count}</span></span>
+                    <UpdateDeleteAnswer
+                        user={currentUser}
+                        question={question}
+                        answer={answer}
                     />
                 </div>
             ) : (
-                <></>
+                <div className="edit-delete-container answer-likes">
+                    <span className="count">
+                        {currentUser && !answer?.likes?.find(id => id === currentUser?.id) && (currentUser?.id !== answer?.userId) ? <button className="like-button" onClick={onSubmitLike}><i className="far fa-heart"></i></button> : currentUser && answer?.likes?.find(id => id === currentUser?.id) && (currentUser?.id !== answer?.userId) ? <button className="unlike-button" onClick={onSubmitLike}><i className="fas fa-heart" ></i></button> : <></>}Likes
+                        <span> &middot; {count}</span>
+
+                    </span>
+                </div>
             )}
         </div>
 

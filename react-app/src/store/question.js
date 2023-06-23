@@ -85,6 +85,13 @@ export const updateOneQuestion = (question, questionId) => async (dispatch) => {
         const res = await response.json()
         dispatch(updateQuestion(res))
         return res
+    } else if (response.status < 500) {
+        const data = await response.json();
+        if (data.errors) {
+            return data.errors;
+        }
+    } else {
+        return ['An error occured. Please try again.']
     }
 }
 
@@ -97,6 +104,7 @@ export const deleteOneQuestion = (questionId) => async (dispatch) => {
         dispatch(deleteQuestion(questionId))
     }
 }
+
 
 export default function questionsReducer(state = {}, action) {
     let newState;

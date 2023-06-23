@@ -1,0 +1,13 @@
+.following-item {
+  text-align: center;
+  color: white;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+  width: 20rem;
+  justify-content: center;
+  /* border: 1px solid black; */
+}
+
+.stuff {
+  list-style: none;
+}

@@ -4,7 +4,7 @@ import './Navigation.css';
 const Footer = () => {
     return (
         <div className='footer'>
-            <p>
+            <p className='footer-content'>
                 Brian Washington Jr:
                 <a className='about-link' href='https://github.com/zipzopboppitybop'>
                     Github

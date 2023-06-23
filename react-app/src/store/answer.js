@@ -69,6 +69,14 @@ export const updateOneAnswer = (answer, answerId) => async (dispatch) => {
         const res = await response.json()
         dispatch(updateAnswer(res))
         return res
+    } else if (response.status < 500) {
+        const data = await response.json();
+        console.log(data)
+        if (data.errors) {
+            return data.errors;
+        }
+    } else {
+        return ['An error occured. Please try again.']
     }
 }
 

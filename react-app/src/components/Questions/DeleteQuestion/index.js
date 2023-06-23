@@ -3,7 +3,6 @@ import { useHistory } from "react-router-dom";
 import { deleteOneQuestion } from "../../../store/question";
 import { useModal } from "../../../context/Modal";
 
-
 const DeleteQuestion = ({ questionId }) => {
     const { closeModal } = useModal();
     const history = useHistory();
@@ -23,14 +22,15 @@ const DeleteQuestion = ({ questionId }) => {
     }
 
     return (
-        <div className="form-modal">
-            <div>Are you sure you want to delete this question?</div>
-            <button onClick={handleDelete}>
-                Yes, delete this Question
-            </button>
-            <button type="button" onClick={onCancel}>
-                Cancel
-            </button>
+        <div className="delete-form">
+            <div>Delete Question?</div>
+            <p>This cannot be undone.</p>
+            <div className="question-form-buttons">
+                <span>
+                    <button className="delete-close-button" onClick={onCancel}>Cancel</button>
+                </span>
+                <button className="delete-button" onClick={handleDelete} >Confirm</button>
+            </div>
         </div>
     )
 }

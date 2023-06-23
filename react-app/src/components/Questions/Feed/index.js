@@ -4,16 +4,25 @@ import { useSelector } from 'react-redux';
 import { getAllQuestions } from '../../../store/question';
 import QuestionItem from '../QuestionItem';
 import SplashPage from './SplashPage';
+import LoadingScreen from '../../LoadingScreen';
 import "./Feed.css"
 
 
 const Feed = () => {
     const dispatch = useDispatch()
     const questions = useSelector(state => state.questions);
+    const questionsArr = Object.values(questions);
     const sessionUser = useSelector(state => state.session.user);
     useEffect(() => {
         dispatch(getAllQuestions())
     }, [dispatch,])
+
+    if (questionsArr.length < 2) {
+        return (
+            <LoadingScreen />
+        )
+    }
+
 
     return (
         <div>

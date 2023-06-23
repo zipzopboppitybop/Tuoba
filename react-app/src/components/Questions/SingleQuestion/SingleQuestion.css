@@ -36,3 +36,8 @@ ul {
 .question-content button {
     border-radius: 1rem;
 }
+
+.answer-edit {
+    display: flex;
+    justify-content: space-between;
+}

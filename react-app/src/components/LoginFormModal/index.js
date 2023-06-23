@@ -26,7 +26,7 @@ function LoginFormModal() {
       <h1  >Log In</h1>
       <form className="form-login" onSubmit={handleSubmit}>
         <ul>
-          {errors.length > 0 ? <div className="signup-errors">
+          {errors.length > 0 ? <div className="color-red">
             Credentials Invalid
           </div> : <></>}
         </ul>

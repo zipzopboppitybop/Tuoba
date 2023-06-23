@@ -24,14 +24,15 @@ const DeleteAnswer = ({ answerId }) => {
     }
 
     return (
-        <div className="form-modal">
-            <div>Are you sure you want to delete this answer?</div>
-            <button onClick={handleDelete}>
-                Yes, delete this Answer
-            </button>
-            <button type="button" onClick={onCancel}>
-                Cancel
-            </button>
+        <div className="delete-form">
+            <div>Delete Answer?</div>
+            <p>This cannot be undone.</p>
+            <div className="question-form-buttons">
+                <span>
+                    <button className="delete-close-button" onClick={onCancel}>Cancel</button>
+                </span>
+                <button className="delete-button" onClick={handleDelete} >Confirm</button>
+            </div>
         </div>
     )
 }

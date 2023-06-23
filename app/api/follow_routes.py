@@ -29,3 +29,13 @@ def follow_unfollow_a_user(user_id):
     followed.followers.append(follower)
     db.session.commit()
     return {"Message": "Following"}
+
+@follow_routes.route('/<int:user_id>/following')
+@login_required
+def users_following(user_id):
+    """
+    Query for users following list
+    """
+    this_user = User.query.get(user_id)
+    following = [user.to_dict() for user in this_user.following]
+    return following

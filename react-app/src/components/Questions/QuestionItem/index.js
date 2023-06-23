@@ -12,6 +12,7 @@ const QuestionItem = ({ question }) => {
     const follower = question?.owner?.followers?.find(id => id === currentUser?.id)
     const initials = question?.owner?.username[0]
     const answers = Object.values(question.answers)
+    let mostLikes = [];
 
     const onSubmitFollow = async (e) => {
         e.preventDefault()
@@ -20,7 +21,10 @@ const QuestionItem = ({ question }) => {
         dispatch(getAllQuestions())
     }
 
-    let mostLikes = answers.reduce((max, answer) => max.likes > answer.likes ? max : answer);
+    if (answers.length > 0) {
+        mostLikes = answers.reduce((max, answer) => max.likes > answer.likes ? max : answer);
+    }
+
 
     console.log(mostLikes)
 

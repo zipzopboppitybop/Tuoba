@@ -11,3 +11,8 @@
 .stuff {
   list-style: none;
 }
+
+.no-following {
+  color: white;
+  text-align: center;
+}

@@ -17,15 +17,23 @@ const FollowingPage = () => {
     if (!currentUser) history.push("/")
 
     return (
-        <div className="following-list">
-            <ul className="stuff">
-                {Object.values(following).map(follow => (
-                    <li className="following-item" key={follow.id}>
-                        <FollowingItem follow={follow} />
-                    </li>
-                ))}
-            </ul>
-        </div>
+        <>
+            {Object.values(following).length > 0 ? (
+                <div className="following-list">
+                    <ul className="stuff">
+                        {Object.values(following).map(follow => (
+                            <li className="following-item" key={follow.id}>
+                                <FollowingItem follow={follow} />
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            ) : (
+                <h1 className="no-following">
+                    You currently Aren't Following anyone!
+                </h1>
+            )}
+        </>
     )
 }
 

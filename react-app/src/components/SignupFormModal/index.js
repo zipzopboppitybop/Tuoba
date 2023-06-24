@@ -12,6 +12,7 @@ function SignupFormModal() {
 	const [confirmPassword, setConfirmPassword] = useState("");
 	const [errors, setErrors] = useState([]);
 	const { closeModal } = useModal();
+	const allErrors = [];
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -29,12 +30,22 @@ function SignupFormModal() {
 		}
 	};
 
+	if (errors) {
+		for (let error of errors) {
+			let split = error.split(":")
+			allErrors.push(split[1]);
+		}
+	}
+
+
+
+
 	return (
 		<>
 			<h1>Sign Up</h1>
 			<form className="form-login" onSubmit={handleSubmit}>
 				<ul className="errors-list">
-					{errors.map((error, idx) => (
+					{allErrors.map((error, idx) => (
 						<li className="color-red" key={idx}>{error}</li>
 					))}
 				</ul>

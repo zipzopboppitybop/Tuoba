@@ -14,7 +14,7 @@ function SearchBar() {
         className='search'
         type="text"
         value={query}
-        placeholder=" Search Quora"
+        placeholder=" Search Tuoba"
         onChange={(e) => setQuery(e.target.value)}
         onKeyPress={(e) => {
           if (e.key === 'Enter') {

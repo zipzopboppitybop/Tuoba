@@ -72,7 +72,7 @@
 
 .login-container {
     width: 50rem;
-    height: 46rem;
+    height: fit-content;
     margin: 0 auto;
     margin-top: 3%;
     text-align: center;
@@ -83,7 +83,7 @@
 
 .modals {
     display: flex;
-
+    height: 36rem;
 }
 
 .signup,

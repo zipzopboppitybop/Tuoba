@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux"
 import { NavLink } from "react-router-dom";
 import './QuestionItem.css'
-import { getFollowsForUser } from "../../../store/follow";
+import { getFollowsForUser, getUserFollowing } from "../../../store/follow";
 import { getAllQuestions } from "../../../store/question";
 import UpdateDeleteQuestion from "./UpdateDeleteQuestion";
 
@@ -18,6 +18,7 @@ const QuestionItem = ({ question }) => {
         e.preventDefault()
 
         dispatch(getFollowsForUser(question?.userId))
+        dispatch(getUserFollowing(currentUser.id))
         dispatch(getAllQuestions())
     }
 

@@ -136,3 +136,17 @@
 .demo-login {
     margin-top: 4rem;
 }
+
+@media (max-height: 850px) {
+    .login-container {
+        height: 38.9rem;
+    }
+
+    .form-login {
+        height: 20rem;
+    }
+
+    .color-red {
+        font-size: .7rem;
+    }
+}

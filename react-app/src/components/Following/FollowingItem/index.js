@@ -17,7 +17,7 @@ const FollowingItem = ({ follow }) => {
 
     useEffect(() => {
         dispatch(getUserFollowing(currentUser.id))
-    }, [dispatch, currentUser.id])
+    }, [dispatch, currentUser.id, follower])
     return (
         <div className="username-unfollow-follow following-item">
             <div className="circle">{initials}</div>
